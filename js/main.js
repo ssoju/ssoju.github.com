@@ -1,7 +1,7 @@
 document.getElementById('share').onclick = function() {
   FB.ui({
     method: 'feed',
-    link: 'https://joshua1988.github.io/DevCampWAP-SWA/',
+    link: 'https://ssoju.github.io/',
     caption: 'My Facebook profile application',
   }, function(response){
     if (response && !response.error_message) {
