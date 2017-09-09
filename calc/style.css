@@ -1,0 +1,54 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul, li {
+    list-style-type: none;
+    list-style:none;
+}
+.cal {
+    margin: 10px auto;
+    width: 300px;
+    background-color: #efefef;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+
+.cal-header {
+    height:40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background-color: #454545;
+    color: #fff;
+}
+
+.cal-input {
+    border:0px;
+    width:100%;
+    height: 30px;
+    line-height:30px;
+}
+
+.cal-buttons {
+    width: 100%;
+}
+
+.cal-buttons li {
+    width: 20%;
+    height: 50px;
+    float: left;
+}
+
+
+.cal-buttons button {
+    width: 98%;
+    height: 98%;
+    display: inline-block;
+}
+
+.cal-buttons-wrap:after {
+    content:'';
+    clear: both;
+    display: block;
+}
