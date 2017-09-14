@@ -1466,27 +1466,208 @@
         <h1 class="page-title" data-filename="index.html">Index</h1>
         
 
-
+<br><br>
     
+<article class="markdown-body entry-content" itemprop="text"><h2><a id="user-content-email-comaheadgmailcom" class="anchor" href="#email-comaheadgmailcom" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>email: <a href="mailto:comahead@gmail.com">comahead@gmail.com</a></h2>
+    <p><em>자바스크립트 UI 프레임웍</em></p>
+    <ul>
+    <li>framework core: <a href="https://github.com/ssoju/javascript/blob/master/src/core.js">https://github.com/ssoju/javascript/blob/master/src/core.js</a></li>
+    <li>ui modules by framework: <a href="https://github.com/ssoju/javascript/tree/master/src/ui">https://github.com/ssoju/javascript/tree/master/src/ui</a></li>
+    </ul>
+    <p><em>axljs framework 사용법</em></p>
+    <div class="highlight highlight-source-js"><pre> &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 클래스를 만드는 방식은 두가지가 있다.</span>
+        
+    &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 1. 부모클래스</span>
+        <span class="pl-k">var</span> ParentClass <span class="pl-k">=</span> <span class="pl-smi">axl</span>.<span class="pl-smi">BaseClass</span>.<span class="pl-en">extend</span>({
+    &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 생성자</span>
+    &nbsp; &nbsp; &nbsp;<span class="pl-en">initialize</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        
+        },
+    &nbsp; &nbsp; &nbsp;<span class="pl-k">...</span>,
+    &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 소멸자</span>
+    &nbsp; &nbsp; &nbsp;<span class="pl-en">destroy</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        
+        }
+        });
+        
+        <span class="pl-c"><span class="pl-c">//</span> or</span>
+        <span class="pl-k">var</span> ParentClass <span class="pl-k">=</span> <span class="pl-smi">axl</span>.<span class="pl-en">Class</span>({
+            <span class="pl-k">...</span>
+        });
 
+    &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 2. 자식클래스 정의 ==================================================================</span>
+    &nbsp; &nbsp;<span class="pl-k">var</span> ChildClass <span class="pl-k">=</span> <span class="pl-smi">ParentClass</span>.<span class="pl-en">extend</span>({
+            <span class="pl-k">...</span>,
+            <span class="pl-en">open</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">flag</span>){
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-c1">this</span>.<span class="pl-en">callParent</span>(flag); <span class="pl-c"><span class="pl-c">//</span> ParentClass.prototype.open 호출</span>
+                <span class="pl-k">...</span>
+            }
+        });
+        
+        <span class="pl-c"><span class="pl-c">//</span> or</span>
+        <span class="pl-k">var</span> ChildClass <span class="pl-k">=</span> <span class="pl-smi">axl</span>.<span class="pl-en">Class</span>({
+    &nbsp; &nbsp; &nbsp; &nbsp;$extend<span class="pl-k">:</span> ParentClass, <span class="pl-c"><span class="pl-c">//</span> 부모클래스 지정</span>
+    &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-k">...</span>,
+            <span class="pl-en">open</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">flag</span>){
+                <span class="pl-c1">this</span>.<span class="pl-en">callParent</span>(flag); <span class="pl-c"><span class="pl-c">//</span> ParentClass.prototype.open 호출</span>
+                <span class="pl-k">...</span>
+            }
+        });    
+        
+        
+        <span class="pl-k">var</span> parent <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ParentClass</span>();
+        <span class="pl-k">var</span> child <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ChildClass</span>();
+        
+        parent <span class="pl-k">instanceof</span> ParentClass; <span class="pl-c"><span class="pl-c">//</span> true</span>
+        child <span class="pl-k">instanceof</span> ParentClass; <span class="pl-c"><span class="pl-c">//</span> true</span>
+        child <span class="pl-k">instanceof</span> ChildClass;  <span class="pl-c"><span class="pl-c">//</span> true</span>
+        
+        
+        
+    &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> UI모듈 만들기 가이드 =====================================================================&nbsp; &nbsp;</span>
+        <span class="pl-k">!</span>(<span class="pl-k">function</span> (<span class="pl-smi">$</span>, <span class="pl-smi">core</span>, <span class="pl-c1">undefined</span>) {
+            <span class="pl-s"><span class="pl-pds">"</span>use strict<span class="pl-pds">"</span></span>; <span class="pl-c"><span class="pl-c">//</span> 암묵적인 자바스크립트 에러를 더 세밀하게 짚어준다.</span>
 
-    <h3> </h3>
+            <span class="pl-c"><span class="pl-c">//</span> 전역공간이 더럽히거나, 함수나 변수이름의 충돌을 미연에 방지하기 위해,</span>
+            <span class="pl-c"><span class="pl-c">//</span> 되도록이면 즉시실행 함수을 만들어서 그 내부에 코드를 작성하는걸 추천한다.</span>
 
+            <span class="pl-c"><span class="pl-c">//</span> UI모듈 작성 방법: 탭컨트롤을 예로 들어 설명하겠다.</span>
+            <span class="pl-smi">core</span>.<span class="pl-en">ui</span>(<span class="pl-s"><span class="pl-pds">'</span>Tabs<span class="pl-pds">'</span></span>, {    <span class="pl-c"><span class="pl-c">//</span> vcui.ui('모듈명', {...옵션, 메소드 등...});</span>
+                <span class="pl-c"><span class="pl-c">//</span> $extend, $mixins, $statics, $singleton 같이 $로 시작하는 속성명은 Class 생성과 관련된 옵션이다.</span>
 
+                <span class="pl-c"><span class="pl-c">//</span> 이벤트처리 모듈을 믹스인 시키기</span>
+                <span class="pl-c"><span class="pl-c">//</span> (여기 있는 EventListener는 부모 클래스인 vcui.ui.View에 포함되어 있기 때문에 굳이 해줄 필요없다)</span>
+                $mixins<span class="pl-k">:</span> [<span class="pl-smi">core</span>.<span class="pl-smi">EventListener</span>],
 
+                <span class="pl-c"><span class="pl-c">//</span> static 변수 설정: 사용예) vcui.ui.Tabs.ON_CHANGED_TAB 으로 접근할 수 있다.</span>
+                $statics<span class="pl-k">:</span> {
+                    <span class="pl-k">:</span>
+                    <span class="pl-c1">ON_CHANGED_TAB</span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>tab:change<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> 이 UI모듈에서 발생되는 커스텀 이벤트명</span>
+                },
 
+                <span class="pl-c"><span class="pl-c">//</span> 싱글톤 클래스 여부</span>
+                $singleton<span class="pl-k">:</span> <span class="pl-c1">true</span>,
 
+                <span class="pl-c"><span class="pl-c">//</span> 해당 모듈을 jQuery 플러그인방식으로 사용할 수 있도록 설정하는 옵션이다. 예) $('#d-tab').axlTab({옵션들});</span>
+                bindjQuery<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>tab<span class="pl-pds">'</span></span>,
 
+                <span class="pl-c"><span class="pl-c">//</span> =========================================================================================</span>
+                <span class="pl-c"><span class="pl-c">//</span> 이하 속성부터는 Tabs.prototype에 붙게된다</span>
+                <span class="pl-c"><span class="pl-c">//</span> name, defaults, selectors, events 속성은 부모쿨래스인 View 클래스에서 처리해주는 속성들이다.</span>
 
+                <span class="pl-c"><span class="pl-c">//</span> 해당모듈의 기본 옵션: 생성자(initialize)로 넘어온 options과 병합하여 this.options에 세팅된다.</span>
+                defaults<span class="pl-k">:</span> {
+                    selectedIndex<span class="pl-k">:</span> <span class="pl-c1">1</span>
+                },
 
-    
+                <span class="pl-c"><span class="pl-c">//</span> 주어진 이름과 셀렉터를 바탕으로 this.el하위에서 검색하여 클래스의 멤버변수로 세팅된다.</span>
+                selectors<span class="pl-k">:</span> {
+                    tabs<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>li.tab<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-c">//</span> 멤버함수 내에서 this.$tabs 로 접근 -&gt; this.$tabs = this.$el.find('li.tab'); 를 자동화시킨 거라고 보면 된다</span>
+                    contents<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>div.cont<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> 멤버함수 내에서 this.$contents 로 접근</span>
+                },
 
+                <span class="pl-c"><span class="pl-c">//</span> 내부에 속한 자식 엘리먼트에 이벤트 바인딩</span>
+                events<span class="pl-k">:</span> {
+                    <span class="pl-s"><span class="pl-pds">'</span>click li.tab a<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>onTabSelect<span class="pl-pds">'</span></span> 
+                    <span class="pl-c"><span class="pl-c">//</span> 'li.tab a'를 'click'할 때 클래스의 메소드인 'onTabSelect'함수를 호출하도록 설정. </span>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> (즉시실행 함수도 가능)</span>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 이는, this.$el.find('li.tab a').on('click', this.onTabSelect.bind(this)); 코드를 자동화 시킨것이다.</span>
+                    <span class="pl-c"><span class="pl-c">//</span> 단, context는 해당 노드가 아닌 클래스 인스턴스가 된다.</span>
+                },
 
+                <span class="pl-c"><span class="pl-c">//</span> $('#tab').axlTab({selectedIndex:1});처럼 jQuery 플러그인방식으로 호출하였을 때, el에는 #tab이 options에는 {sel...}가 넘어온다.</span>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> or new vcui.ui.Tab('#tab', {selectedIndex:1}); 처럼 캑체를 직접 생성해도 됨.</span>
+                <span class="pl-en">initialize</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">el</span>, <span class="pl-smi">options</span>) {
+                    <span class="pl-k">var</span> me <span class="pl-k">=</span> <span class="pl-c1">this</span>;
 
+                    <span class="pl-c"><span class="pl-c">//</span> vcui.ui.View를 상속받은 모듈은</span>
+                    <span class="pl-c"><span class="pl-c">//</span> 반드시 부모생성자를 호출해주어야 다음과 같은 편리한 기능들이 붙게된다.</span>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> el을 this.$el에 설정해준다.( &nbsp;this.el = el; this.$el = $(el); )</span>
+                    <span class="pl-c"><span class="pl-c">//</span> defaults와 options(우선권 높음)을 병합하여 me.options에 세팅. ( this.options = $.extend(true, {}, defaults, options); )</span>
+                    <span class="pl-c"><span class="pl-c">//</span> selectors에 해당하는 엘리먼트들을 검색하여 주어진 이름의 멤버변수들에 설정</span>
+                    <span class="pl-c"><span class="pl-c">//</span> events에 지정된 핸들러들을 바인딩</span>
+                    <span class="pl-c"><span class="pl-c">//</span> 만약 부모 생성자에서 false가 반환된다면, 이미 해당 엘리먼트에 현재 UI모듈이 빌드되었거나,</span>
+                    <span class="pl-c"><span class="pl-c">//</span> el노드가 페이지에 없다거나 disabled 상태임을 의미하므로, 모듈을 빌드하지 않고 빠져나가야 한다.</span>
+                    <span class="pl-k">if</span> (<span class="pl-smi">me</span>.<span class="pl-en">callParent</span>(el, options) <span class="pl-k">===</span> <span class="pl-c1">false</span>) {
+                        <span class="pl-k">return</span>;
+                    }
+                    <span class="pl-c"><span class="pl-c">//</span>또는 if(me.superMethod('initialize', el, options) === false){ return; } 처럼 부모 클래스의 메소드를 명시적으로도 호출가능 함</span>
 
+                    <span class="pl-smi">me</span>.<span class="pl-c1">select</span>(<span class="pl-smi">me</span>.<span class="pl-c1">options</span>.<span class="pl-c1">selectedIndex</span>);
+                },
 
+                <span class="pl-c"><span class="pl-c">//</span> events속성에 의해 바인딩된 핸들러</span>
+                <span class="pl-en">onTabSelect</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">e</span>) {
+                    <span class="pl-k">var</span> me <span class="pl-k">=</span> <span class="pl-c1">this</span>,
+                        $this <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-smi">e</span>.<span class="pl-smi">currentTarget</span>);
 
+                    <span class="pl-smi">me</span>.<span class="pl-c1">select</span>(<span class="pl-smi">$this</span>.<span class="pl-c1">parent</span>().<span class="pl-c1">index</span>());
+                },
 
+                <span class="pl-en">select</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">index</span>) {
+                    <span class="pl-k">var</span> me <span class="pl-k">=</span> <span class="pl-c1">this</span>,
+                        $tabs <span class="pl-k">=</span> <span class="pl-smi">me</span>.<span class="pl-smi">$tabs</span>, <span class="pl-c"><span class="pl-c">//</span> selectors속의 tabs: 'li.tab' 에 의해 설정된 멤버변수</span>
+                        $contents <span class="pl-k">=</span> <span class="pl-smi">me</span>.<span class="pl-smi">$contents</span>; <span class="pl-c"><span class="pl-c">//</span> selectors속의 contents 'div.cont' 에 의해 설정된 멤버변수</span>
+                        
+                    <span class="pl-c"><span class="pl-c">//</span> index에 해당하는 탭 활성화</span>
+                    <span class="pl-smi">$tabs</span>.<span class="pl-en">removeClass</span>(<span class="pl-s"><span class="pl-pds">'</span>on<span class="pl-pds">'</span></span>).<span class="pl-en">eq</span>(index).<span class="pl-en">addClass</span>(<span class="pl-s"><span class="pl-pds">'</span>on<span class="pl-pds">'</span></span>);
+                    <span class="pl-smi">$contents</span>.<span class="pl-en">hide</span>().<span class="pl-en">eq</span>(index).<span class="pl-en">show</span>();
+
+                    <span class="pl-smi">me</span>.<span class="pl-en">trigger</span>(<span class="pl-smi">Tabs</span>.<span class="pl-c1">ON_CHANGED_TAB</span>, [index]); <span class="pl-c"><span class="pl-c">//</span> 탭이 변경되었을 때 changedTab 이벤트를 날림.</span>
+                }
+            });
+
+            <span class="pl-c"><span class="pl-c">//</span> requirejs를 지원하기 위해 define함수가 존재할 경우 모듈 등록</span>
+            <span class="pl-k">if</span>(<span class="pl-k">typeof</span> define <span class="pl-k">!==</span> <span class="pl-s"><span class="pl-pds">'</span>undefined<span class="pl-pds">'</span></span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">defined</span>.<span class="pl-smi">amd</span>){
+                <span class="pl-en">define</span>([], <span class="pl-k">function</span>(){
+                    <span class="pl-k">return</span> Tabs;
+                });
+            }
+
+        })(jQuery, <span class="pl-c1">window</span>[<span class="pl-c1">LIB_NAME</span>]);
+        
+    &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 적용 #1</span>
+    &nbsp; &nbsp;<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#tab<span class="pl-pds">'</span></span>).<span class="pl-en">axlTab</span>({
+            selectedIndex<span class="pl-k">:</span> <span class="pl-c1">1</span> <span class="pl-c"><span class="pl-c">//</span> or &lt;div id="tab" data-selected-index="1"&gt;...&lt;/a&gt;</span>
+        }).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>tab:change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
+    &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-en">alert</span>(<span class="pl-smi">data</span>.<span class="pl-c1">selectedIndex</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>가 선택됨<span class="pl-pds">'</span></span>);
+    &nbsp; &nbsp;});
+        
+    &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 적용 #2</span>
+    &nbsp; &nbsp;<span class="pl-k">var</span> tab <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">axl.ui.Tab</span>(<span class="pl-s"><span class="pl-pds">'</span>#tab<span class="pl-pds">'</span></span>, {
+            selectedIndex<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+            on<span class="pl-k">:</span> {
+                <span class="pl-s"><span class="pl-pds">'</span>tab:change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
+                    <span class="pl-en">alert</span>(<span class="pl-smi">data</span>.<span class="pl-c1">selectedIndex</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>가 선택됨<span class="pl-pds">'</span></span>);
+                }
+            }
+        });
+    &nbsp; &nbsp;<span class="pl-smi">tab</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>tab:beforeChange<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
+            <span class="pl-k">if</span> (<span class="pl-smi">data</span>.<span class="pl-c1">selectedIndex</span> <span class="pl-k">===</span> <span class="pl-c1">2</span>) {
+                <span class="pl-smi">e</span>.<span class="pl-c1">preventDefault</span>();
+            }
+        });
+    &nbsp; &nbsp;<span class="pl-k">...</span></pre></div>
+    <p>memory release code: UI모듈이 연결된 엘리먼트가 dom에서 제거됐는지 주기적으로 체크하여 메모리에서 자동으로 해제시켜주는 기능.
+    페이지가 처음 로딩될 때 프레임웍에서 자동 실행.</p>
+    <div class="highlight highlight-source-js"><pre>    <span class="pl-k">...</span>
+        <span class="pl-c"><span class="pl-c">//</span> 삭제된 엘리먼트에 빌드된 모듈을 메모리에서 해제</span>
+        <span class="pl-smi">core</span>.<span class="pl-smi">ui</span>.<span class="pl-en">uiGarbageClear</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+            <span class="pl-k">for</span> (<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-smi">ui</span>.<span class="pl-smi">View</span>.<span class="pl-smi">_instances</span>.<span class="pl-c1">length</span> <span class="pl-k">-</span> <span class="pl-c1">1</span>, view; i <span class="pl-k">&gt;=</span> <span class="pl-c1">0</span>; i<span class="pl-k">--</span>) {
+                view <span class="pl-k">=</span> <span class="pl-smi">ui</span>.<span class="pl-smi">View</span>.<span class="pl-smi">_instances</span>[i];
+                <span class="pl-k">if</span> (<span class="pl-smi">view</span>.<span class="pl-smi">$el</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-k">!</span><span class="pl-smi">core</span>.<span class="pl-smi">dom</span>.<span class="pl-c1">contains</span>(<span class="pl-c1">document</span>, <span class="pl-smi">view</span>.<span class="pl-smi">$el</span>[<span class="pl-c1">0</span>])) { <span class="pl-c"><span class="pl-c">//</span> DOM에서 삭제여부 체크</span>
+                    <span class="pl-k">try</span> {
+                        <span class="pl-smi">view</span>.<span class="pl-en">destroy</span>(); <span class="pl-c"><span class="pl-c">//</span> 이벤트 언바인드, 인터벌 중지, 엘리먼트 참조 null 처리 등등 </span>
+                        <span class="pl-smi">ui</span>.<span class="pl-smi">View</span>.<span class="pl-smi">_instances</span>[i] <span class="pl-k">=</span> view <span class="pl-k">=</span> <span class="pl-c1">null</span>;
+                        <span class="pl-smi">ui</span>.<span class="pl-smi">View</span>.<span class="pl-smi">_instances</span>.<span class="pl-c1">splice</span>(i, <span class="pl-c1">1</span>);
+                    } <span class="pl-k">catch</span> (e) {}
+                }
+            }
+        };
+        <span class="pl-k">...</span></pre></div>
+    <h2><a id="user-content-diagram" class="anchor" href="#diagram" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>diagram</h2>
+    <p><a href="https://raw.githubusercontent.com/ssoju/javascript/master/library-diagram.png" target="_blank"><img src="https://raw.githubusercontent.com/ssoju/javascript/master/library-diagram.png" alt="diagram" style="max-width:100%;"></a></p>
+</article>
 
 
         
