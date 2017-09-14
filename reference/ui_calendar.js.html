@@ -1,0 +1,2737 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Source: ui/calendar.js</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":false,"cleverLinks":true,"applicationName":"VCUI Library","default":{"outputSourceFiles":true},"order":["$","vcui","vcui.string","vcui.number","vcui.array","vcui.object","vcui.date","vcui.uri","vcui.dom","vcui.css3","vcui.util","vcui.BaseClass","vcui.PubSub","vcui.Cookie","vcui.helper","vcui.helper.*","vcui.ui","vcui.ui.View"]};
+    </script>
+    
+
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html">VCUI Library</a></h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+    
+        <li class="item" data-name="$">
+            <span class="title">
+                <a href="$.html">$</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="$#off"><a href="$.html#off">off</a></li>
+            
+                <li data-name="$#encodeURI"><a href="$.html#encodeURI">encodeURI</a></li>
+            
+                <li data-name="$#replaceClass"><a href="$.html#replaceClass">replaceClass</a></li>
+            
+                <li data-name="$#noop"><a href="$.html#noop">noop</a></li>
+            
+                <li data-name="$#checkedValues"><a href="$.html#checkedValues">checkedValues</a></li>
+            
+                <li data-name="$#activeItem"><a href="$.html#activeItem">activeItem</a></li>
+            
+                <li data-name="$#onImgLoaded"><a href="$.html#onImgLoaded">onImgLoaded</a></li>
+            
+                <li data-name="$#getImgSize"><a href="$.html#getImgSize">getImgSize</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui">
+            <span class="title">
+                <a href="vcui.html">vcui</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="vcui.tmpInput"><a href="vcui.html#tmpInput">tmpInput</a></li>
+            
+                <li data-name="vcui.tmpNode"><a href="vcui.html#tmpNode">tmpNode</a></li>
+            
+                <li data-name="vcui.detect"><a href="vcui.html#detect">detect</a></li>
+            
+                <li data-name="vcui.keyCode"><a href="vcui.html#keyCode">keyCode</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.each"><a href="vcui.html#each">each</a></li>
+            
+                <li data-name="vcui.eachReverse"><a href="vcui.html#eachReverse">eachReverse</a></li>
+            
+                <li data-name="vcui.extend"><a href="vcui.html#extend">extend</a></li>
+            
+                <li data-name="vcui.clone"><a href="vcui.html#clone">clone</a></li>
+            
+                <li data-name="vcui.isType"><a href="vcui.html#isType">isType</a></li>
+            
+                <li data-name="vcui.type"><a href="vcui.html#type">type</a></li>
+            
+                <li data-name="vcui.isFunction"><a href="vcui.html#isFunction">isFunction</a></li>
+            
+                <li data-name="vcui.isStrinng"><a href="vcui.html#isStrinng">isStrinng</a></li>
+            
+                <li data-name="vcui.isArray"><a href="vcui.html#isArray">isArray</a></li>
+            
+                <li data-name="vcui.isNumber"><a href="vcui.html#isNumber">isNumber</a></li>
+            
+                <li data-name="vcui.isObject"><a href="vcui.html#isObject">isObject</a></li>
+            
+                <li data-name="vcui.isUndefined"><a href="vcui.html#isUndefined">isUndefined</a></li>
+            
+                <li data-name="vcui.isEmpty"><a href="vcui.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="vcui.hasOwn"><a href="vcui.html#hasOwn">hasOwn</a></li>
+            
+                <li data-name="vcui.namespace"><a href="vcui.html#namespace">namespace</a></li>
+            
+                <li data-name="vcui.addon"><a href="vcui.html#addon">addon</a></li>
+            
+                <li data-name="vcui.throttle"><a href="vcui.html#throttle">throttle</a></li>
+            
+                <li data-name="vcui.toArray"><a href="vcui.html#toArray">toArray</a></li>
+            
+                <li data-name="vcui.getUniqId"><a href="vcui.html#getUniqId">getUniqId</a></li>
+            
+                <li data-name="vcui.nextSeq"><a href="vcui.html#nextSeq">nextSeq</a></li>
+            
+                <li data-name="vcui.comma"><a href="vcui.html#comma">comma</a></li>
+            
+                <li data-name="vcui.timeStart"><a href="vcui.html#timeStart">timeStart</a></li>
+            
+                <li data-name="vcui.timeEnd"><a href="vcui.html#timeEnd">timeEnd</a></li>
+            
+                <li data-name="vcui.template"><a href="vcui.html#template">template</a></li>
+            
+                <li data-name="vcui.helper"><a href="vcui.html#helper">helper</a></li>
+            
+                <li data-name="vcui.ui"><a href="vcui.html#ui">ui</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.string">
+            <span class="title">
+                <a href="vcui.string.html">vcui.string</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="vcui.string.unescapeHTML"><a href="vcui.string.html#unescapeHTML">unescapeHTML</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.string.trim"><a href="vcui.string.html#trim">trim</a></li>
+            
+                <li data-name="vcui.string.replaceAll"><a href="vcui.string.html#replaceAll">replaceAll</a></li>
+            
+                <li data-name="vcui.string.byteLength"><a href="vcui.string.html#byteLength">byteLength</a></li>
+            
+                <li data-name="vcui.string.getFileExt"><a href="vcui.string.html#getFileExt">getFileExt</a></li>
+            
+                <li data-name="vcui.string.getFileName"><a href="vcui.string.html#getFileName">getFileName</a></li>
+            
+                <li data-name="vcui.string.cut"><a href="vcui.string.html#cut">cut</a></li>
+            
+                <li data-name="vcui.string.cutByByte"><a href="vcui.string.html#cutByByte">cutByByte</a></li>
+            
+                <li data-name="vcui.string.indexByByte"><a href="vcui.string.html#indexByByte">indexByByte</a></li>
+            
+                <li data-name="vcui.string.capitalize"><a href="vcui.string.html#capitalize">capitalize</a></li>
+            
+                <li data-name="vcui.string.camelize"><a href="vcui.string.html#camelize">camelize</a></li>
+            
+                <li data-name="vcui.string.dasherize"><a href="vcui.string.html#dasherize">dasherize</a></li>
+            
+                <li data-name="vcui.string.toFirstLower"><a href="vcui.string.html#toFirstLower">toFirstLower</a></li>
+            
+                <li data-name="vcui.string.repeat"><a href="vcui.string.html#repeat">repeat</a></li>
+            
+                <li data-name="vcui.string.escapeHTML"><a href="vcui.string.html#escapeHTML">escapeHTML</a></li>
+            
+                <li data-name="vcui.string.toggle"><a href="vcui.string.html#toggle">toggle</a></li>
+            
+                <li data-name="vcui.string.format"><a href="vcui.string.html#format">format</a></li>
+            
+                <li data-name="vcui.string.toEntities"><a href="vcui.string.html#toEntities">toEntities</a></li>
+            
+                <li data-name="vcui.string.random"><a href="vcui.string.html#random">random</a></li>
+            
+                <li data-name="vcui.string.stripTags"><a href="vcui.string.html#stripTags">stripTags</a></li>
+            
+                <li data-name="vcui.string.stripScripts"><a href="vcui.string.html#stripScripts">stripScripts</a></li>
+            
+                <li data-name="vcui.string.sprintf"><a href="vcui.string.html#sprintf">sprintf</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.number">
+            <span class="title">
+                <a href="vcui.number.html">vcui.number</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.number.zeroPad"><a href="vcui.number.html#zeroPad">zeroPad</a></li>
+            
+                <li data-name="vcui.number.addComma"><a href="vcui.number.html#addComma">addComma</a></li>
+            
+                <li data-name="vcui.number.random"><a href="vcui.number.html#random">random</a></li>
+            
+                <li data-name="vcui.number.limit"><a href="vcui.number.html#limit">limit</a></li>
+            
+                <li data-name="vcui.number.parse"><a href="vcui.number.html#parse">parse</a></li>
+            
+                <li data-name="vcui.number.toBinary"><a href="vcui.number.html#toBinary">toBinary</a></li>
+            
+                <li data-name="vcui.number.fromBinary"><a href="vcui.number.html#fromBinary">fromBinary</a></li>
+            
+                <li data-name="vcui.number.toKorean"><a href="vcui.number.html#toKorean">toKorean</a></li>
+            
+                <li data-name="vcui.number.pad"><a href="vcui.number.html#pad">pad</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.array">
+            <span class="title">
+                <a href="vcui.array.html">vcui.array</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="vcui.array#reduce"><a href="vcui.array.html#reduce">reduce</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.array#append"><a href="vcui.array.html#append">append</a></li>
+            
+                <li data-name="vcui.array#unique"><a href="vcui.array.html#unique">unique</a></li>
+            
+                <li data-name="vcui.array.map"><a href="vcui.array.html#map">map</a></li>
+            
+                <li data-name="vcui.array.every"><a href="vcui.array.html#every">every</a></li>
+            
+                <li data-name="vcui.array.any"><a href="vcui.array.html#any">any</a></li>
+            
+                <li data-name="vcui.array#shuffle"><a href="vcui.array.html#shuffle">shuffle</a></li>
+            
+                <li data-name="vcui.array.filter"><a href="vcui.array.html#filter">filter</a></li>
+            
+                <li data-name="vcui.array.include"><a href="vcui.array.html#include">include</a></li>
+            
+                <li data-name="vcui.array.has"><a href="vcui.array.html#has">has</a></li>
+            
+                <li data-name="vcui.array.indexOf"><a href="vcui.array.html#indexOf">indexOf</a></li>
+            
+                <li data-name="vcui.array#removeAt"><a href="vcui.array.html#removeAt">removeAt</a></li>
+            
+                <li data-name="vcui.array#remove"><a href="vcui.array.html#remove">remove</a></li>
+            
+                <li data-name="vcui.array#max"><a href="vcui.array.html#max">max</a></li>
+            
+                <li data-name="vcui.array#min"><a href="vcui.array.html#min">min</a></li>
+            
+                <li data-name="vcui.array#different"><a href="vcui.array.html#different">different</a></li>
+            
+                <li data-name="vcui.array#sum"><a href="vcui.array.html#sum">sum</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.object">
+            <span class="title">
+                <a href="vcui.object.html">vcui.object</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="vcui.object.stringify"><a href="vcui.object.html#stringify">stringify</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.object.keys"><a href="vcui.object.html#keys">keys</a></li>
+            
+                <li data-name="vcui.object.values"><a href="vcui.object.html#values">values</a></li>
+            
+                <li data-name="vcui.object.map"><a href="vcui.object.html#map">map</a></li>
+            
+                <li data-name="vcui.object.hasItems"><a href="vcui.object.html#hasItems">hasItems</a></li>
+            
+                <li data-name="vcui.object.toQueryString"><a href="vcui.object.html#toQueryString">toQueryString</a></li>
+            
+                <li data-name="vcui.object.traverse"><a href="vcui.object.html#traverse">traverse</a></li>
+            
+                <li data-name="vcui.object.remove"><a href="vcui.object.html#remove">remove</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.date">
+            <span class="title">
+                <a href="vcui.date.html">vcui.date</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.date.format"><a href="vcui.date.html#format">format</a></li>
+            
+                <li data-name="vcui.date.isValid"><a href="vcui.date.html#isValid">isValid</a></li>
+            
+                <li data-name="vcui.date.between"><a href="vcui.date.html#between">between</a></li>
+            
+                <li data-name="vcui.date.compare"><a href="vcui.date.html#compare">compare</a></li>
+            
+                <li data-name="vcui.date.equalsYMD"><a href="vcui.date.html#equalsYMD">equalsYMD</a></li>
+            
+                <li data-name="vcui.date.calcDate"><a href="vcui.date.html#calcDate">calcDate</a></li>
+            
+                <li data-name="vcui.date.parse"><a href="vcui.date.html#parse">parse</a></li>
+            
+                <li data-name="vcui.date.monthDiff"><a href="vcui.date.html#monthDiff">monthDiff</a></li>
+            
+                <li data-name="vcui.date.daysInMonth"><a href="vcui.date.html#daysInMonth">daysInMonth</a></li>
+            
+                <li data-name="vcui.date.splits"><a href="vcui.date.html#splits">splits</a></li>
+            
+                <li data-name="vcui.date.diff"><a href="vcui.date.html#diff">diff</a></li>
+            
+                <li data-name="vcui.date.weekOfYear"><a href="vcui.date.html#weekOfYear">weekOfYear</a></li>
+            
+                <li data-name="vcui.date.isLeapYear"><a href="vcui.date.html#isLeapYear">isLeapYear</a></li>
+            
+                <li data-name="vcui.date.add"><a href="vcui.date.html#add">add</a></li>
+            
+                <li data-name="vcui.date.max"><a href="vcui.date.html#max">max</a></li>
+            
+                <li data-name="vcui.date.min"><a href="vcui.date.html#min">min</a></li>
+            
+                <li data-name="vcui.date.normalize"><a href="vcui.date.html#normalize">normalize</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.uri">
+            <span class="title">
+                <a href="vcui.uri.html">vcui.uri</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.uri.getHost"><a href="vcui.uri.html#getHost">getHost</a></li>
+            
+                <li data-name="vcui.uri.getPageUrl"><a href="vcui.uri.html#getPageUrl">getPageUrl</a></li>
+            
+                <li data-name="vcui.uri.addParam"><a href="vcui.uri.html#addParam">addParam</a></li>
+            
+                <li data-name="vcui.uri.parseQuery"><a href="vcui.uri.html#parseQuery">parseQuery</a></li>
+            
+                <li data-name="vcui.uri.parseUrl"><a href="vcui.uri.html#parseUrl">parseUrl</a></li>
+            
+                <li data-name="vcui.uri.removeHash"><a href="vcui.uri.html#removeHash">removeHash</a></li>
+            
+                <li data-name="vcui.uri.getParam"><a href="vcui.uri.html#getParam">getParam</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.dom">
+            <span class="title">
+                <a href="vcui.dom.html">vcui.dom</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.css3">
+            <span class="title">
+                <a href="vcui.css3.html">vcui.css3</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            <span class="subtitle">Members</span>
+            
+                <li data-name="vcui.css3.support"><a href="vcui.css3.html#support">support</a></li>
+            
+                <li data-name="vcui.css3.support3D"><a href="vcui.css3.html#support3D">support3D</a></li>
+            
+                <li data-name="vcui.css3.vendor"><a href="vcui.css3.html#vendor">vendor</a></li>
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.css3.has"><a href="vcui.css3.html#has">has</a></li>
+            
+                <li data-name="vcui.css3.position"><a href="vcui.css3.html#position">position</a></li>
+            
+                <li data-name="vcui.css3.prefix"><a href="vcui.css3.html#prefix">prefix</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.util">
+            <span class="title">
+                <a href="vcui.util.html">vcui.util</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.util.imageCover"><a href="vcui.util.html#imageCover">imageCover</a></li>
+            
+                <li data-name="vcui.util.openPopup"><a href="vcui.util.html#openPopup">openPopup</a></li>
+            
+                <li data-name="vcui.util.openPopupAndExec"><a href="vcui.util.html#openPopupAndExec">openPopupAndExec</a></li>
+            
+                <li data-name="vcui.util.resizeToContent"><a href="vcui.util.html#resizeToContent">resizeToContent</a></li>
+            
+                <li data-name="vcui.util.popupCoords"><a href="vcui.util.html#popupCoords">popupCoords</a></li>
+            
+                <li data-name="vcui.util.loadImages"><a href="vcui.util.html#loadImages">loadImages</a></li>
+            
+                <li data-name="vcui.util.waitImageLoad"><a href="vcui.util.html#waitImageLoad">waitImageLoad</a></li>
+            
+                <li data-name="vcui.util.getItemsWidth"><a href="vcui.util.html#getItemsWidth">getItemsWidth</a></li>
+            
+                <li data-name="vcui.util.infiniteScroll"><a href="vcui.util.html#infiniteScroll">infiniteScroll</a></li>
+            
+                <li data-name="vcui.util.fixedScroll"><a href="vcui.util.html#fixedScroll">fixedScroll</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.BaseClass">
+            <span class="title">
+                <a href="vcui.BaseClass.html">vcui.BaseClass</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.BaseClass.extend"><a href="vcui.BaseClass.html#extend">extend</a></li>
+            
+                <li data-name="vcui.BaseClass#suprByName"><a href="vcui.BaseClass.html#suprByName">suprByName</a></li>
+            
+                <li data-name="vcui.BaseClass.getInstance"><a href="vcui.BaseClass.html#getInstance">getInstance</a></li>
+            
+                <li data-name="vcui.BaseClass.hooks"><a href="vcui.BaseClass.html#hooks">hooks</a></li>
+            
+                <li data-name="vcui.BaseClass.members"><a href="vcui.BaseClass.html#members">members</a></li>
+            
+                <li data-name="vcui.BaseClass.members"><a href="vcui.BaseClass.html#members">members</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.PubSub">
+            <span class="title">
+                <a href="vcui.PubSub.html">vcui.PubSub</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.PubSub.on"><a href="vcui.PubSub.html#on">on</a></li>
+            
+                <li data-name="vcui.PubSub.off"><a href="vcui.PubSub.html#off">off</a></li>
+            
+                <li data-name="vcui.PubSub.trigger"><a href="vcui.PubSub.html#trigger">trigger</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.Cookie">
+            <span class="title">
+                <a href="vcui.Cookie.html">vcui.Cookie</a>
+                
+                <span class="static">static</span>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.Cookie.set"><a href="vcui.Cookie.html#set">set</a></li>
+            
+                <li data-name="vcui.Cookie.get"><a href="vcui.Cookie.html#get">get</a></li>
+            
+                <li data-name="vcui.Cookie.remove"><a href="vcui.Cookie.html#remove">remove</a></li>
+            
+                <li data-name="vcui.Cookie.setItem"><a href="vcui.Cookie.html#setItem">setItem</a></li>
+            
+                <li data-name="vcui.Cookie.removeItem"><a href="vcui.Cookie.html#removeItem">removeItem</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.helper.Timer">
+            <span class="title">
+                <a href="vcui.helper.Timer.html">vcui.helper.Timer</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.helper.Timer#initialize"><a href="vcui.helper.Timer.html#initialize">initialize</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.helper.Geolocation">
+            <span class="title">
+                <a href="vcui.helper.Geolocation.html">vcui.helper.Geolocation</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.helper.Geolocation#initialize"><a href="vcui.helper.Geolocation.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.helper.Geolocation#_getTransKorMessage"><a href="vcui.helper.Geolocation.html#_getTransKorMessage">_getTransKorMessage</a></li>
+            
+                <li data-name="vcui.helper.Geolocation#getCurrentPosition"><a href="vcui.helper.Geolocation.html#getCurrentPosition">getCurrentPosition</a></li>
+            
+                <li data-name="vcui.helper.Geolocation#watchPosition"><a href="vcui.helper.Geolocation.html#watchPosition">watchPosition</a></li>
+            
+                <li data-name="vcui.helper.Geolocation#getCurrentAddress"><a href="vcui.helper.Geolocation.html#getCurrentAddress">getCurrentAddress</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.View">
+            <span class="title">
+                <a href="vcui.ui.View.html">vcui.ui.View</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.View#$"><a href="vcui.ui.View.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.View#instance"><a href="vcui.ui.View.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.View#getElement"><a href="vcui.ui.View.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.View#initialize"><a href="vcui.ui.View.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.View#updateSelectors"><a href="vcui.ui.View.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.View#setOption"><a href="vcui.ui.View.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.View#getOption"><a href="vcui.ui.View.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.View#option"><a href="vcui.ui.View.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.View#makeEventNS"><a href="vcui.ui.View.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.View#on"><a href="vcui.ui.View.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.View#off"><a href="vcui.ui.View.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.View#one"><a href="vcui.ui.View.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.View#trigger"><a href="vcui.ui.View.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.View#customTrigger"><a href="vcui.ui.View.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.View#triggerHandler"><a href="vcui.ui.View.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.View#tmpl"><a href="vcui.ui.View.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.View#docOn"><a href="vcui.ui.View.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.View#docOff"><a href="vcui.ui.View.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.View#winOn"><a href="vcui.ui.View.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.View#winOff"><a href="vcui.ui.View.html#winOff">winOff</a></li>
+            
+                <li data-name="vcui.ui.View#destroy"><a href="vcui.ui.View.html#destroy">destroy</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.View#event:optionchange"><a href="vcui.ui.View.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.Accordion">
+            <span class="title">
+                <a href="vcui.ui.Accordion.html">vcui.ui.Accordion</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.Accordion#initialize"><a href="vcui.ui.Accordion.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.Accordion#collapse"><a href="vcui.ui.Accordion.html#collapse">collapse</a></li>
+            
+                <li data-name="vcui.ui.Accordion#expand"><a href="vcui.ui.Accordion.html#expand">expand</a></li>
+            
+                <li data-name="vcui.ui.Accordion#$"><a href="vcui.ui.Accordion.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.Accordion#instance"><a href="vcui.ui.Accordion.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.Accordion#getElement"><a href="vcui.ui.Accordion.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.Accordion#updateSelectors"><a href="vcui.ui.Accordion.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.Accordion#setOption"><a href="vcui.ui.Accordion.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.Accordion#getOption"><a href="vcui.ui.Accordion.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.Accordion#option"><a href="vcui.ui.Accordion.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.Accordion#makeEventNS"><a href="vcui.ui.Accordion.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.Accordion#on"><a href="vcui.ui.Accordion.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.Accordion#off"><a href="vcui.ui.Accordion.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.Accordion#one"><a href="vcui.ui.Accordion.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.Accordion#trigger"><a href="vcui.ui.Accordion.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.Accordion#customTrigger"><a href="vcui.ui.Accordion.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.Accordion#triggerHandler"><a href="vcui.ui.Accordion.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.Accordion#tmpl"><a href="vcui.ui.Accordion.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.Accordion#docOn"><a href="vcui.ui.Accordion.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.Accordion#docOff"><a href="vcui.ui.Accordion.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.Accordion#winOn"><a href="vcui.ui.Accordion.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.Accordion#winOff"><a href="vcui.ui.Accordion.html#winOff">winOff</a></li>
+            
+                <li data-name="vcui.ui.Accordion#destroy"><a href="vcui.ui.Accordion.html#destroy">destroy</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.Accordion#event:accordionbeforecollapse"><a href="vcui.ui.Accordion.html#event:accordionbeforecollapse">accordionbeforecollapse</a></li>
+            
+                <li data-name="vcui.ui.Accordion#event:accordioncollapse"><a href="vcui.ui.Accordion.html#event:accordioncollapse">accordioncollapse</a></li>
+            
+                <li data-name="vcui.ui.Accordion#event:accordionbeforeexpand"><a href="vcui.ui.Accordion.html#event:accordionbeforeexpand">accordionbeforeexpand</a></li>
+            
+                <li data-name="vcui.ui.Accordion#event:accordionexpand"><a href="vcui.ui.Accordion.html#event:accordionexpand">accordionexpand</a></li>
+            
+                <li data-name="vcui.ui.Accordion#event:optionchange"><a href="vcui.ui.Accordion.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.Calendar">
+            <span class="title">
+                <a href="vcui.ui.Calendar.html">vcui.ui.Calendar</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.Calendar#$"><a href="vcui.ui.Calendar.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.Calendar#instance"><a href="vcui.ui.Calendar.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.Calendar#getElement"><a href="vcui.ui.Calendar.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.Calendar#initialize"><a href="vcui.ui.Calendar.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.Calendar#updateSelectors"><a href="vcui.ui.Calendar.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.Calendar#setOption"><a href="vcui.ui.Calendar.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.Calendar#getOption"><a href="vcui.ui.Calendar.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.Calendar#option"><a href="vcui.ui.Calendar.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.Calendar#makeEventNS"><a href="vcui.ui.Calendar.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.Calendar#on"><a href="vcui.ui.Calendar.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.Calendar#off"><a href="vcui.ui.Calendar.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.Calendar#one"><a href="vcui.ui.Calendar.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.Calendar#trigger"><a href="vcui.ui.Calendar.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.Calendar#customTrigger"><a href="vcui.ui.Calendar.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.Calendar#triggerHandler"><a href="vcui.ui.Calendar.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.Calendar#tmpl"><a href="vcui.ui.Calendar.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.Calendar#docOn"><a href="vcui.ui.Calendar.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.Calendar#docOff"><a href="vcui.ui.Calendar.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.Calendar#winOn"><a href="vcui.ui.Calendar.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.Calendar#winOff"><a href="vcui.ui.Calendar.html#winOff">winOff</a></li>
+            
+                <li data-name="vcui.ui.Calendar#destroy"><a href="vcui.ui.Calendar.html#destroy">destroy</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.Calendar#event:optionchange"><a href="vcui.ui.Calendar.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="scui.ui.Dropdown">
+            <span class="title">
+                <a href="scui.ui.Dropdown.html">scui.ui.Dropdown</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.Modal">
+            <span class="title">
+                <a href="vcui.ui.Modal.html">vcui.ui.Modal</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.Modal#initialize"><a href="vcui.ui.Modal.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.Modal#toggle"><a href="vcui.ui.Modal.html#toggle">toggle</a></li>
+            
+                <li data-name="vcui.ui.Modal#show"><a href="vcui.ui.Modal.html#show">show</a></li>
+            
+                <li data-name="vcui.ui.Modal#hide"><a href="vcui.ui.Modal.html#hide">hide</a></li>
+            
+                <li data-name="vcui.ui.Modal#layout"><a href="vcui.ui.Modal.html#layout">layout</a></li>
+            
+                <li data-name="vcui.ui.Modal#center"><a href="vcui.ui.Modal.html#center">center</a></li>
+            
+                <li data-name="vcui.ui.Modal#open"><a href="vcui.ui.Modal.html#open">open</a></li>
+            
+                <li data-name="vcui.ui.Modal#close"><a href="vcui.ui.Modal.html#close">close</a></li>
+            
+                <li data-name="vcui.ui.Modal#destroy"><a href="vcui.ui.Modal.html#destroy">destroy</a></li>
+            
+                <li data-name="vcui.ui.Modal#$"><a href="vcui.ui.Modal.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.Modal#instance"><a href="vcui.ui.Modal.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.Modal#getElement"><a href="vcui.ui.Modal.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.Modal#updateSelectors"><a href="vcui.ui.Modal.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.Modal#setOption"><a href="vcui.ui.Modal.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.Modal#getOption"><a href="vcui.ui.Modal.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.Modal#option"><a href="vcui.ui.Modal.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.Modal#makeEventNS"><a href="vcui.ui.Modal.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.Modal#on"><a href="vcui.ui.Modal.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.Modal#off"><a href="vcui.ui.Modal.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.Modal#one"><a href="vcui.ui.Modal.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.Modal#trigger"><a href="vcui.ui.Modal.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.Modal#customTrigger"><a href="vcui.ui.Modal.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.Modal#triggerHandler"><a href="vcui.ui.Modal.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.Modal#tmpl"><a href="vcui.ui.Modal.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.Modal#docOn"><a href="vcui.ui.Modal.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.Modal#docOff"><a href="vcui.ui.Modal.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.Modal#winOn"><a href="vcui.ui.Modal.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.Modal#winOff"><a href="vcui.ui.Modal.html#winOff">winOff</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.Modal#event:optionchange"><a href="vcui.ui.Modal.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.AjaxModal">
+            <span class="title">
+                <a href="vcui.ui.AjaxModal.html">vcui.ui.AjaxModal</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.AjaxModal#$"><a href="vcui.ui.AjaxModal.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#instance"><a href="vcui.ui.AjaxModal.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#getElement"><a href="vcui.ui.AjaxModal.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#initialize"><a href="vcui.ui.AjaxModal.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#updateSelectors"><a href="vcui.ui.AjaxModal.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#setOption"><a href="vcui.ui.AjaxModal.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#getOption"><a href="vcui.ui.AjaxModal.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#option"><a href="vcui.ui.AjaxModal.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#makeEventNS"><a href="vcui.ui.AjaxModal.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#on"><a href="vcui.ui.AjaxModal.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#off"><a href="vcui.ui.AjaxModal.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#one"><a href="vcui.ui.AjaxModal.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#trigger"><a href="vcui.ui.AjaxModal.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#customTrigger"><a href="vcui.ui.AjaxModal.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#triggerHandler"><a href="vcui.ui.AjaxModal.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#tmpl"><a href="vcui.ui.AjaxModal.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#docOn"><a href="vcui.ui.AjaxModal.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#docOff"><a href="vcui.ui.AjaxModal.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#winOn"><a href="vcui.ui.AjaxModal.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#winOff"><a href="vcui.ui.AjaxModal.html#winOff">winOff</a></li>
+            
+                <li data-name="vcui.ui.AjaxModal#destroy"><a href="vcui.ui.AjaxModal.html#destroy">destroy</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.AjaxModal#event:optionchange"><a href="vcui.ui.AjaxModal.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.Placeholder">
+            <span class="title">
+                <a href="vcui.ui.Placeholder.html">vcui.ui.Placeholder</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.Placeholder#initialize"><a href="vcui.ui.Placeholder.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#update"><a href="vcui.ui.Placeholder.html#update">update</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#destroy"><a href="vcui.ui.Placeholder.html#destroy">destroy</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#$"><a href="vcui.ui.Placeholder.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#instance"><a href="vcui.ui.Placeholder.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#getElement"><a href="vcui.ui.Placeholder.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#updateSelectors"><a href="vcui.ui.Placeholder.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#setOption"><a href="vcui.ui.Placeholder.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#getOption"><a href="vcui.ui.Placeholder.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#option"><a href="vcui.ui.Placeholder.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#makeEventNS"><a href="vcui.ui.Placeholder.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#on"><a href="vcui.ui.Placeholder.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#off"><a href="vcui.ui.Placeholder.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#one"><a href="vcui.ui.Placeholder.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#trigger"><a href="vcui.ui.Placeholder.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#customTrigger"><a href="vcui.ui.Placeholder.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#triggerHandler"><a href="vcui.ui.Placeholder.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#tmpl"><a href="vcui.ui.Placeholder.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#docOn"><a href="vcui.ui.Placeholder.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#docOff"><a href="vcui.ui.Placeholder.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#winOn"><a href="vcui.ui.Placeholder.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.Placeholder#winOff"><a href="vcui.ui.Placeholder.html#winOff">winOff</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.Placeholder#event:optionchange"><a href="vcui.ui.Placeholder.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.Selectbox">
+            <span class="title">
+                <a href="vcui.ui.Selectbox.html">vcui.ui.Selectbox</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.Selectbox#$"><a href="vcui.ui.Selectbox.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#instance"><a href="vcui.ui.Selectbox.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#getElement"><a href="vcui.ui.Selectbox.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#initialize"><a href="vcui.ui.Selectbox.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#updateSelectors"><a href="vcui.ui.Selectbox.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#setOption"><a href="vcui.ui.Selectbox.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#getOption"><a href="vcui.ui.Selectbox.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#option"><a href="vcui.ui.Selectbox.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#makeEventNS"><a href="vcui.ui.Selectbox.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#on"><a href="vcui.ui.Selectbox.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#off"><a href="vcui.ui.Selectbox.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#one"><a href="vcui.ui.Selectbox.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#trigger"><a href="vcui.ui.Selectbox.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#customTrigger"><a href="vcui.ui.Selectbox.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#triggerHandler"><a href="vcui.ui.Selectbox.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#tmpl"><a href="vcui.ui.Selectbox.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#docOn"><a href="vcui.ui.Selectbox.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#docOff"><a href="vcui.ui.Selectbox.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#winOn"><a href="vcui.ui.Selectbox.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#winOff"><a href="vcui.ui.Selectbox.html#winOff">winOff</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#destroy"><a href="vcui.ui.Selectbox.html#destroy">destroy</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.Selectbox#event:selectboxopen"><a href="vcui.ui.Selectbox.html#event:selectboxopen">selectboxopen</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#event:selectboxclose"><a href="vcui.ui.Selectbox.html#event:selectboxclose">selectboxclose</a></li>
+            
+                <li data-name="vcui.ui.Selectbox#event:optionchange"><a href="vcui.ui.Selectbox.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.Tab">
+            <span class="title">
+                <a href="vcui.ui.Tab.html">vcui.ui.Tab</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.Tab#initialize"><a href="vcui.ui.Tab.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.Tab#select"><a href="vcui.ui.Tab.html#select">select</a></li>
+            
+                <li data-name="vcui.ui.Tab#$"><a href="vcui.ui.Tab.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.Tab#instance"><a href="vcui.ui.Tab.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.Tab#getElement"><a href="vcui.ui.Tab.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.Tab#updateSelectors"><a href="vcui.ui.Tab.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.Tab#setOption"><a href="vcui.ui.Tab.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.Tab#getOption"><a href="vcui.ui.Tab.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.Tab#option"><a href="vcui.ui.Tab.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.Tab#makeEventNS"><a href="vcui.ui.Tab.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.Tab#on"><a href="vcui.ui.Tab.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.Tab#off"><a href="vcui.ui.Tab.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.Tab#one"><a href="vcui.ui.Tab.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.Tab#trigger"><a href="vcui.ui.Tab.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.Tab#customTrigger"><a href="vcui.ui.Tab.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.Tab#triggerHandler"><a href="vcui.ui.Tab.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.Tab#tmpl"><a href="vcui.ui.Tab.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.Tab#docOn"><a href="vcui.ui.Tab.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.Tab#docOff"><a href="vcui.ui.Tab.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.Tab#winOn"><a href="vcui.ui.Tab.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.Tab#winOff"><a href="vcui.ui.Tab.html#winOff">winOff</a></li>
+            
+                <li data-name="vcui.ui.Tab#destroy"><a href="vcui.ui.Tab.html#destroy">destroy</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.Tab#event:tabbeforechange"><a href="vcui.ui.Tab.html#event:tabbeforechange">tabbeforechange</a></li>
+            
+                <li data-name="vcui.ui.Tab#event:tabchange"><a href="vcui.ui.Tab.html#event:tabchange">tabchange</a></li>
+            
+                <li data-name="vcui.ui.Tab#event:optionchange"><a href="vcui.ui.Tab.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.TextCounter">
+            <span class="title">
+                <a href="vcui.ui.TextCounter.html">vcui.ui.TextCounter</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.TextCounter#initialize"><a href="vcui.ui.TextCounter.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#textLength"><a href="vcui.ui.TextCounter.html#textLength">textLength</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#_checkLimit"><a href="vcui.ui.TextCounter.html#_checkLimit">_checkLimit</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#destroy"><a href="vcui.ui.TextCounter.html#destroy">destroy</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#$"><a href="vcui.ui.TextCounter.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#instance"><a href="vcui.ui.TextCounter.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#getElement"><a href="vcui.ui.TextCounter.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#updateSelectors"><a href="vcui.ui.TextCounter.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#setOption"><a href="vcui.ui.TextCounter.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#getOption"><a href="vcui.ui.TextCounter.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#option"><a href="vcui.ui.TextCounter.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#makeEventNS"><a href="vcui.ui.TextCounter.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#on"><a href="vcui.ui.TextCounter.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#off"><a href="vcui.ui.TextCounter.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#one"><a href="vcui.ui.TextCounter.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#trigger"><a href="vcui.ui.TextCounter.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#customTrigger"><a href="vcui.ui.TextCounter.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#triggerHandler"><a href="vcui.ui.TextCounter.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#tmpl"><a href="vcui.ui.TextCounter.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#docOn"><a href="vcui.ui.TextCounter.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#docOff"><a href="vcui.ui.TextCounter.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#winOn"><a href="vcui.ui.TextCounter.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.TextCounter#winOff"><a href="vcui.ui.TextCounter.html#winOff">winOff</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.TextCounter#event:optionchange"><a href="vcui.ui.TextCounter.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="vcui.ui.TextControl">
+            <span class="title">
+                <a href="vcui.ui.TextControl.html">vcui.ui.TextControl</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            <span class="subtitle">Methods</span>
+            
+                <li data-name="vcui.ui.TextControl#initialize"><a href="vcui.ui.TextControl.html#initialize">initialize</a></li>
+            
+                <li data-name="vcui.ui.TextControl#destroy"><a href="vcui.ui.TextControl.html#destroy">destroy</a></li>
+            
+                <li data-name="vcui.ui.TextControl#$"><a href="vcui.ui.TextControl.html#$">$</a></li>
+            
+                <li data-name="vcui.ui.TextControl#instance"><a href="vcui.ui.TextControl.html#instance">instance</a></li>
+            
+                <li data-name="vcui.ui.TextControl#getElement"><a href="vcui.ui.TextControl.html#getElement">getElement</a></li>
+            
+                <li data-name="vcui.ui.TextControl#updateSelectors"><a href="vcui.ui.TextControl.html#updateSelectors">updateSelectors</a></li>
+            
+                <li data-name="vcui.ui.TextControl#setOption"><a href="vcui.ui.TextControl.html#setOption">setOption</a></li>
+            
+                <li data-name="vcui.ui.TextControl#getOption"><a href="vcui.ui.TextControl.html#getOption">getOption</a></li>
+            
+                <li data-name="vcui.ui.TextControl#option"><a href="vcui.ui.TextControl.html#option">option</a></li>
+            
+                <li data-name="vcui.ui.TextControl#makeEventNS"><a href="vcui.ui.TextControl.html#makeEventNS">makeEventNS</a></li>
+            
+                <li data-name="vcui.ui.TextControl#on"><a href="vcui.ui.TextControl.html#on">on</a></li>
+            
+                <li data-name="vcui.ui.TextControl#off"><a href="vcui.ui.TextControl.html#off">off</a></li>
+            
+                <li data-name="vcui.ui.TextControl#one"><a href="vcui.ui.TextControl.html#one">one</a></li>
+            
+                <li data-name="vcui.ui.TextControl#trigger"><a href="vcui.ui.TextControl.html#trigger">trigger</a></li>
+            
+                <li data-name="vcui.ui.TextControl#customTrigger"><a href="vcui.ui.TextControl.html#customTrigger">customTrigger</a></li>
+            
+                <li data-name="vcui.ui.TextControl#triggerHandler"><a href="vcui.ui.TextControl.html#triggerHandler">triggerHandler</a></li>
+            
+                <li data-name="vcui.ui.TextControl#tmpl"><a href="vcui.ui.TextControl.html#tmpl">tmpl</a></li>
+            
+                <li data-name="vcui.ui.TextControl#docOn"><a href="vcui.ui.TextControl.html#docOn">docOn</a></li>
+            
+                <li data-name="vcui.ui.TextControl#docOff"><a href="vcui.ui.TextControl.html#docOff">docOff</a></li>
+            
+                <li data-name="vcui.ui.TextControl#winOn"><a href="vcui.ui.TextControl.html#winOn">winOn</a></li>
+            
+                <li data-name="vcui.ui.TextControl#winOff"><a href="vcui.ui.TextControl.html#winOff">winOff</a></li>
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            <span class="subtitle">Events</span>
+            
+                <li data-name="vcui.ui.TextControl#event:optionchange"><a href="vcui.ui.TextControl.html#event:optionchange">optionchange</a></li>
+            
+            </ul>
+        </li>
+    
+        <li class="item" data-name="scui.ui.Tooltip">
+            <span class="title">
+                <a href="scui.ui.Tooltip.html">scui.ui.Tooltip</a>
+                
+            </span>
+            <ul class="members itemMembers">
+            
+            </ul>
+            <ul class="typedefs itemMembers">
+            
+            </ul>
+            <ul class="methods itemMembers">
+            
+            </ul>
+            <ul class="events itemMembers">
+            
+            </ul>
+        </li>
+    
+    </ul>
+</div>
+    <div class="main">
+        <h1 class="page-title" data-filename="ui_calendar.js.html">Source: ui/calendar.js</h1>
+        
+
+
+    
+    <section>
+        <article>
+            <pre id="source-code" class="prettyprint source "><code>'use strict';
+
+/*!
+ * @modul vcui.ui.Calendar.js
+ * @email odyseek@vi-nyl.com
+ * @create 2017-09-06
+ * @license MIT License
+ *
+ * @modifier 김두일(dududu1@vinylc.com)
+ */
+(function ($, core, undefined) {
+    "use strict";
+
+    if (core.ui.Calendar) {
+        return;
+    }
+
+    var ctx = window,
+        $win = $(window),
+        $doc = $(document),
+        ui = core.ui,
+        dateUtil = core.date,
+        detect = core.detect,
+        isTouch = detect.isTouch;
+
+    //Calendar ////////////////////////////////////////////////////////////////////////////
+    /**
+     * @class
+     * @description 달력 모듈
+     * @name vcui.ui.Calendar
+     * @extends vcui.ui.View
+     * @fires vcui.ui.Calendar#calendarshow
+     * @fires vcui.ui.Calendar#calendarshown
+     * @fires vcui.ui.Calendar#calendarhide
+     * @fires vcui.ui.Calendar#calendarhidden
+     * @fires vcui.ui.Calendar#calendarselected
+     * @fires vcui.ui.Calendar#calendarinsertdate
+     */
+    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var dateRegex = /[0-9]{4}.?[0-9]{2}.?[0-9]{2}/;
+
+    var Calendar = ui('Calendar', /** @lends scui.ui.Calendar# */{
+        bindjQuery: 'calendar',
+        defaults: {
+            weekNames: ['일', '월', '화', '수', '목', '금', '토'],
+            monthNames: '1월,2월,3월,4월,5월,6월,7월,8월,9월,10월,11월,12월'.split(','),
+            titleFormat: 'yyyy년 MM월 dd일',
+            weekendDisabled: false, // 주말을 disabled시킬 것인가
+            type: 'button', // 날짜가 선택되게 할 것인가
+            inputTarget: '', // 날짜를 선택했을 때, 날짜가 들어갈 인풋박스의 셀렉터
+            showOtherMonths: false, // 이전, 다음달의 날짜를 표시할 것인가
+            isBubble: false, // 달력이벤트의 버블링을 허용할 것인가
+            date: new Date(), // 처음에 표시할 기본 날짜
+            today: new Date(), // 오늘 날짜
+            isClickActive: true, // 인라인모드에서 클릭했을 때 active효과를 줄 것인가.
+            showByInput: false, // 인풋박스에 의해서도 달력을 열 것인가
+            where: 'inline', // 달력 dom을 어디에 두고 열것인가 설정:(body(body 맨 하단, inline(버튼 바로 밑)
+            minDate: '-5y', // 날짜 하한값
+            maxDate: '+5y', // 날짜 상한값
+            template: {
+                header: '&lt;div class="ui-calendar-header-first">' + '&lt;a href="#" class="ui-calendar-set-today" title="현재일 보기">&lt;/a>' + '&lt;select class="ui-calendar-sel-years" title="달력년도">&lt;/select>' + '&lt;a href="#" class="ui-calendar-close">&lt;span class="hide">닫기&lt;/span>&lt;/a>' + '&lt;/div>' + '&lt;div class="ui-calendar-header-second">' + '&lt;a href="#" class="ui-calendar-prev">&amp;lt;&lt;/a>' + '&lt;span class="ui-calendar-now">01&lt;/span>' + '&lt;a href="#" class="ui-calendar-next">&amp;gt;&lt;/a>' + '&lt;/div>',
+                label: '&lt;span class="ui-calendar-day" title="{{title}}">{{day}}&lt;/span>',
+                button: '&lt;button type="button" class="ui-calendar-day{{disabled?" disabled":""}}" title="{{title}}" {{disabled?"disabled=disabled style=cursor:default":""}}>{{day}}&lt;/button>'
+            },
+            holidays: [], // 휴일 날짜 -> ['2014-04-05', '2014-05-12'],
+            disabledDays: [], // 특정일을 선택 못하게 할때 사용 -> ['2014-04-05', '2014-05-12'],
+            holidaysAlertMsg: '',
+            caption: '캘린더입니다. 글은 일요일, 월요일, 화요일, 수요일, 목요일, 금요일, 토요일 순으로 나옵니다.',
+            monthCaption: '월 선택 캘린더입니다. 1월부터 12월까지 순서대로 나옵니다.',
+            colWidth: '32px', // 셀 너비
+            format: 'yyyy-MM-dd'
+        },
+
+        events: {},
+
+        /**
+         *
+         * @param {jquery|element} el 엘리먼트
+         * @param {object} [options] 옵션
+         * @param {array&lt;string>} [options.weekNames] 주의 한글명
+         * @param {array&lt;string>} [options.monthNames] 월의 한글명
+         * @param {boolean} [options.isClickable=true] 날짜를 선택할 수 있게 할 것인가
+         * @param {string} [options.titleFormat=yyyy년 MM월 dd일] 제목 포맷
+         * @param {boolean} [options.weekendDisabled = false] 주말을 disabled시킬 것인가
+         * @param {string} [options.inputTarget] 날짜를 선택했을 때, 날짜가 들어갈 인풋박스의 셀렉터
+         * @param {boolean} [options.showOtherMonths = false] 이전, 다음달의 날짜를 표시할 것인가
+         * @param {date} [options.date = Date.now()] 처음에 표시할 기본 날짜
+         * @param {boolean} [options.isHoverCell = true] 인라인모드에서 클릭했을 때 active효과를 줄 것인가.
+         * @param {string} [minDate="-5y"] 이전 몇년까지 표시할 것인가
+         * @param {string} [minDate="+5y"] 이전 몇년까지 표시할 것인가
+         * @param {string} [options.caption] 달력 캡션
+         * @returns {boolean}
+         */
+        initialize: function initialize(el, options) {
+            var self = this,
+                d;
+            if (self.supr(el, options) === false) {
+                return self.release();
+            }
+
+            self._normalizeOptions();
+            self._parseMinMaxDate();
+
+            self.isInline = !self.$el.is('button, input, a');
+
+            if (self.options.inputTarget) {
+                self.$input = $(self.options.inputTarget);
+                self.$input.data('ui_calendar', self);
+            } else {
+                throw new Error('data-input-target 속성을 설정해주세요.');
+            }
+
+            self.options.header = true;
+
+            if (self.isInline) {
+                self.currDate = d = dateUtil.parse(self.options.date), isNaN(d) ? new Date() : d;
+                self.isShown = true;
+                self._readInput();
+                self._render();
+            } else {
+
+                if (detect.isMobile) {
+                    self.currDate = d = dateUtil.parse(self.$input.val() || self.options.date), isNaN(d) ? new Date() : d;
+                    self._renderMobileCalendar();
+
+                    self.off('.calendar').on('click.calendar', function (e) {
+                        e.preventDefault();
+                        self.$input.focus().click();
+                    });
+
+                    return;
+                } else {
+                    self.options.showByInput &amp;&amp; self.$input.on('click', function (e) {
+                        if (self.isShown) {
+                            return;
+                        }
+                        self.opener = this;
+                        self.open();
+                    });
+
+                    self.$input.addClass('ui_formatter').attr({
+                        'data-format': 'date',
+                        'maxlength': 10
+                    }).prop('readonly', true);
+                    self.$input.on('keyup paste change', function (e) {
+
+                        if (!self.isShown || this.value.length !== 10) {
+                            return;
+                        }
+                        if (self._isValidDate(this.value)) {
+                            self.setDate(this.value);
+                        }
+                    });
+                }
+
+                self.options.type = 'button';
+                self.off('.calendar').on('click.calendar', function (e) {
+                    e.preventDefault();
+                    if (self.isShown) {
+                        self.close();
+                        return;
+                    }
+                    self.opener = this;
+                    self.open();
+                });
+            }
+        },
+
+        _isValidDate: function _isValidDate(val) {
+
+            if (!val || val.length &lt; 8) {
+                return false;
+            }
+            val = dateUtil.parse(val);
+            if (!dateUtil.isValid(val)) {
+                return false;
+            }
+            if (this.minDate > val) {
+                return false;
+            }
+            if (this.maxDate &lt; val) {
+                return false;
+            }
+            return true;
+        },
+
+        /**
+         * 옵션 중에서 날짜옵션에 문자열로 된게 있으면 파싱해서 date형으로 변환한다.
+         * @private
+         */
+        _normalizeOptions: function _normalizeOptions() {
+            var self = this,
+                opts = self.options;
+
+            if (!core.is(opts.today, 'date')) {
+                opts.today = dateUtil.parse(opts.today + '');
+            }
+
+            //data-holidays속성을 이용한 경우 문자열로 넘어오기 때문에 배열로 변환해주어야 한다.
+            if (core.is(opts.holidays, 'string')) {
+                try {
+                    //opts.holidays = eval(opts.holidays);
+                    opts.holidays = new Function('return ' + opts.holidays)();
+                } catch (e) {
+                    opts.holidays = [];
+                }
+            }
+
+            //data-disabled-days속성을 이용한 경우 문자열로 넘어오기 때문에 배열로 변환해주어야 한다.
+            if (core.is(opts.disabledDays, 'string')) {
+                try {
+                    //opts.disabledDays = eval(opts.disabledDays);
+                    opts.disabledDays = new Function('return ' + opts.disabledDays)();
+                } catch (e) {
+                    opts.disabledDays = [];
+                }
+            }
+        },
+
+        /**
+         * 옵션에 있는 최소날짜와 최대날짜를 Date형으로 변환
+         */
+        _parseMinMaxDate: function _parseMinMaxDate() {
+            var self = this,
+                opts = self.options,
+                minDate = opts.minDate,
+                maxDate = opts.maxDate;
+
+            self.setMinDate(minDate);
+            self.setMaxDate(maxDate);
+        },
+
+        /**
+         * 미선택 여부
+         * @param {number} y 년도
+         * @param {number} m 월
+         * @param {number} d 일
+         * @returns {boolean} 미선택여부
+         * @private
+         */
+        _isDisabledDay: function _isDisabledDay(y, m, d) {
+            var self = this,
+                disabledDays = self.options.disabledDays,
+                i,
+                date,
+                item;
+
+            for (var i = -1; item = disabledDays[++i];) {
+                date = dateUtil.parse(item);
+                if (date.getFullYear() === y &amp;&amp; date.getMonth() + 1 === m &amp;&amp; date.getDate() === d) {
+                    return true;
+                }
+            }
+
+            return false;
+        },
+
+        /**
+         * 휴일 여부
+         * @param {number} y 년도
+         * @param {number} m 월
+         * @param {number} d 일
+         * @returns {boolean} 휴일여부
+         * @private
+         */
+        _isHoliday: function _isHoliday(y, m, d) {
+            var self = this,
+                holidays = self.options.holidays,
+                i,
+                date,
+                item;
+
+            for (var i = -1; item = holidays[++i];) {
+                date = dateUtil.parse(item);
+                if (date.getFullYear() === y &amp;&amp; date.getMonth() + 1 === m &amp;&amp; date.getDate() === d) {
+                    return true;
+                }
+            }
+
+            return false;
+        },
+
+        /**
+         * 최소날짜 설정
+         *
+         * @param {Date|String} minDate '2014-12-12', '-2M'
+         */
+        setMinDate: function setMinDate(m, isRender) {
+            var self = this,
+                today = core.clone(self.options.today),
+                minDate,
+                val;
+
+            if (!m) {
+                minDate = core.clone(self.options.minDate);
+            } else {
+                minDate = m;
+            }
+
+            if (core.is(minDate, 'date')) {
+                self.minDate = core.clone(minDate);
+            } else if (dateRegex.test(minDate)) {
+                self.minDate = core.date.parse(minDate);
+            } else {
+                if (val = core.date.calc(today, minDate)) {
+                    self.minDate = val;
+                }
+            }
+
+            if (!core.is(self.minDate, 'date')) {
+                self.minDate = new Date(today.getFullYear() - 5, 0, 1, 0, 0, 0, 0);
+            }
+
+            self.minDate.setHours(0, 0, 0, 0);
+
+            if (dateUtil.isValid(self.currDate) &amp;&amp; self.currDate &lt; self.minDate) {
+                self.currDate = core.clone(self.minDate);
+            }
+            if (self.isShown &amp;&amp; isRender !== false) {
+
+                self._renderHeader();
+                self._renderDate();
+            }
+
+            if (detect.isMobile) {
+                self.$input.prop({ 'min': dateUtil.format(self.minDate, 'yyyy-MM-dd') });
+            }
+
+            if (self.$input &amp;&amp; dateUtil.isValid(self.$input.val()) &amp;&amp; dateUtil.compare(self.minDate, self.$input.val()) === -1) {
+
+                if (detect.isMobile) {
+                    self.$input.val(dateUtil.format(self.minDate, 'yyyy-MM-dd'));
+                } else {
+                    self.$input.val(dateUtil.format(self.minDate));
+                }
+            }
+        },
+
+        /**
+         * 최대날짜 설정
+         *
+         * @param {Date|String} maxDate '2014-12-12', '+2M'
+         */
+        setMaxDate: function setMaxDate(m, isRender) {
+            var self = this,
+                today = core.clone(self.options.today),
+                maxDate,
+                val;
+
+            if (!m) {
+                maxDate = core.clone(self.options.maxDate);
+            } else {
+                maxDate = m;
+            }
+
+            if (core.is(maxDate, 'date')) {
+                self.maxDate = core.clone(maxDate);
+            } else if (dateRegex.test(maxDate)) {
+                self.maxDate = core.date.parse(maxDate);
+            } else {
+                if (val = core.date.calc(today, maxDate)) {
+                    self.maxDate = val;
+                }
+            }
+
+            if (!core.is(self.maxDate, 'date')) {
+                self.maxDate = new Date(today.getFullYear() + 5, 11, 31, 0, 0, 0, 0);
+            }
+
+            self.maxDate.setHours(0, 0, 0, 0);
+
+            if (dateUtil.isValid(self.currDate) &amp;&amp; self.currDate > self.maxDate) {
+                self.currDate = core.clone(self.maxDate);
+            }
+            if (self.isShown &amp;&amp; isRender !== false) {
+                self._renderHeader();
+                self._renderDate();
+            }
+
+            if (detect.isMobile) {
+                self.$input.prop({ 'max': dateUtil.format(self.maxDate, 'yyyy-MM-dd') });
+            }
+
+            if (self.$input &amp;&amp; dateUtil.isValid(self.$input.val()) &amp;&amp; dateUtil.compare(self.maxDate, self.$input.val()) === 1) {
+                if (detect.isMobile) {
+                    self.$input.val(dateUtil.format(self.maxDate, 'yyyy-MM-dd'));
+                } else {
+                    self.$input.val(dateUtil.format(self.maxDate));
+                }
+            }
+        },
+
+        setRangeDate: function setRangeDate(minDate, maxDate) {
+            var self = this;
+
+            self.setMinDate(minDate, false);
+            self.setMaxDate(maxDate, false);
+            if (self.isShown) {
+                self._renderHeader();
+                self._renderDate();
+            }
+        },
+
+        /**
+         * 모바일 버전 렌더링
+         * @private
+         */
+        _renderMobileCalendar: function _renderMobileCalendar() {
+            var self = this;
+            self.oldTxt = "";
+
+            self.$input.val(dateUtil.format(self.$input.val(), 'yyyy-MM-dd')).attr({ 'type': 'date', 'data-module': 'calendar' }).prop({
+                'readonly': false,
+                'min': dateUtil.format(self.minDate, 'yyyy-MM-dd'),
+                'max': dateUtil.format(self.maxDate, 'yyyy-MM-dd')
+            }).on('change', function (e) {
+
+                var newDate = $(e.currentTarget).val();
+                var evtData = {
+                    target: e.currentTarget,
+                    //year: $this.data('year'),month: $this.data('month'),day: $this.data('day'),value: format,calendar: self.$calendar[0],
+                    date: newDate
+
+                };
+                self.$input.triggerHandler('calendarinsertdate', evtData);
+            });
+        },
+
+        /**
+         * 위치 재조절
+         */
+        _reposition: function _reposition() {
+            if (this.options.type !== 'button' || this.options.isInline) {
+                return;
+            }
+
+            var self = this,
+                util = core.util,
+                calWidth = self.$calendar.width(),
+                calHalfWidth = Math.ceil(calWidth / 2),
+                inpWidth,
+                inpHalfWidth,
+                offset,
+                docWidth,
+                top,
+                left,
+                absLeft;
+
+            inpWidth = self.$input.outerWidth();
+            inpHalfWidth = Math.ceil(inpWidth / 2);
+            top = self.$input[self.options.where === 'body' ? 'offset' : 'position']().top + self.$input.outerHeight() + 10;
+            left = inpHalfWidth - calHalfWidth;
+
+            self.$calendar.css({
+                left: left,
+                top: top
+            });
+            return self;
+        },
+
+        /**
+         * 모달 띄우기
+         * @returns {Calendar}
+         */
+        open: function open() {
+            var self = this;
+
+            if (self.isInline) {
+                return;
+            }
+            Calendar.active &amp;&amp; Calendar.active.close();
+            Calendar.active = this;
+
+            var ev = $.Event('calendarshow');
+            self.trigger(ev);
+
+            if (ev.isDefaultPrevented()) {
+                return;
+            }
+
+            self._readInput();
+            self._render();
+            self._reposition();
+            self.show();
+            self.isShown = true;
+            self.$calendar.attr('tabindex', 0).focus();
+
+            return self;
+        },
+
+        /**
+         * 인풋에 있는 값을 달력에 반영
+         * @private
+         */
+        _readInput: function _readInput() {
+            var self = this,
+                val = self.$input.val(),
+                valDate = val &amp;&amp; val.length &lt; 8 ? null : dateUtil.parse(val);
+
+            if (core.date.isValid(valDate)) {
+                if (!valDate || isNaN(valDate.getTime())) {
+                    self.currDate = core.clone(self.options.date);
+                    self.activeDate = core.clone(self.options.today);
+                    if (val) {
+                        self.$input.val(dateUtil.format(self.activeDate));
+                    }
+                } else {
+                    var cmp = self._compareDate(valDate);
+                    if (cmp &lt; 0) {
+                        valDate = self.currDate = core.clone(self.minDate);
+                    } else if (cmp > 0) {
+                        valDate = self.currDate = core.clone(self.maxDate);
+                    } else {
+                        self.currDate = valDate;
+                    }
+                    self.activeDate = core.clone(valDate);
+
+                    if (val &amp;&amp; cmp !== 0) {
+                        self.$input.val(dateUtil.format(valDate));
+                    }
+                }
+            } else {
+                self.currDate = core.clone(self.options.date);
+                self.activeDate = core.clone(self.options.today);
+            }
+        },
+
+        /**
+         * 모달 닫기
+         * @returns {Calendar}
+         */
+        close: function close() {
+            var self = this;
+
+            if (self.isInline) {
+                return;
+            }
+
+            self.isShown = false;
+            self._trigger('hidden');
+            self._remove();
+            $doc.off('.calendar');
+            Calendar.active = null;
+
+            return this;
+        },
+
+        /**
+         * 모달 표시
+         * @returns {Calendar}
+         */
+        show: function show() {
+            var self = this;
+
+            if (!self.isInline) {
+                if (self.$el.prop('disabled') || self.$el.hasClass('disabled')) {
+                    return;
+                }
+
+                $doc.on('mousedown.calendar', function (e) {
+                    if (self.$input &amp;&amp; self.$input[0] !== e.target &amp;&amp; !$.contains(self.$el[0], e.target) &amp;&amp; !$.contains(self.$calendar[0], e.target) &amp;&amp; self.$el[0] != e.target) {
+                        //e.preventDefault();
+                        self.close();
+                    }
+                });
+
+                if (!core.isTouch) {
+                    self._escape();
+                }
+
+                self.$calendar.show(); //showLayer({opener: self.$el});
+                self._trigger('shown');
+            }
+
+            return self;
+        },
+
+        /**
+         * esc 키를 누르면 닫히도록 이번트 바인딩
+         * @private
+         */
+        _escape: function _escape() {
+            var self = this;
+
+            self.$calendar.add(self.$el).add(self.$input).off('keyup.calendar').on('keyup.calendar', function (e) {
+                if (e.keyCode === core.keyCode.ESCAPE) {
+                    self.close();
+                    $(self.opener).focus();
+                }
+            });
+        },
+
+        /**
+         * DOM 삭제
+         * @returns {Calendar}
+         */
+        _remove: function _remove() {
+            var self = this;
+
+            if (self.$calendar) {
+                //self.$selectboxYears.vcSelectbox('release');
+                self.$calendar.off();
+                self.$calendar.remove();
+                self.$calendar = null;
+            }
+
+            return self;
+        },
+
+        /**
+         * 렌더링
+         */
+        _render: function _render() {
+            var self = this,
+                opts = self.options,
+                timer,
+                tmpl;
+
+            if (!dateUtil.isValid(self.currDate)) {
+                self.currDate = dateUtil.parse(self.options.date);
+            }
+            if (self.currDate &lt; self.minDate) {
+                self.currDate = core.clone(self.minDate);
+            }
+            if (self.currDate > self.maxDate) {
+                self.currDate = core.clone(self.maxDate);
+            }
+
+            tmpl = '&lt;div class="ui-calendar-container">&lt;div class="ui-select-day">' + (opts.header !== false ? opts.template.header : '') + '&lt;div class="ui-calendar-date">&lt;/div>&lt;/div>&lt;/div>';
+
+            self._remove();
+            self.$calendar = $(tmpl);
+
+            if (opts.header) {
+                self.$calendar.on('change', '.ui-calendar-sel-years', function (e) {
+                    var date = core.clone(self.currDate);
+                    date.setYear(this.value | 0);
+                    self.setCurrentDate(date);
+                });
+            }
+
+            if (self.isInline) {
+                // 인라인
+                self.$el.empty().append(self.$calendar);
+                self.$el.find('.ui-calendar-close').remove();
+            } else {
+                // 모달
+                self.$calendar.css({
+                    position: 'absolute',
+                    backgroundColor: '#fff',
+                    zIndex: 9999
+                });
+                if (self.options.where === 'body') {
+                    $('body').append(self.$calendar);
+                } else {
+                    self.$el.parent().append(self.$calendar);
+                }
+            }
+
+            self.$calendar.off('.calendar').on('click.calendar', '.ui-calendar-prev, .ui-calendar-next', function (e) {
+                // 이전 / 다음
+                e.preventDefault();
+                if (self.$el.hasClass('disabled')) {
+                    return;
+                }
+
+                var $el = $(e.currentTarget),
+                    isPrev = $el.hasClass('ui-calendar-prev');
+
+                self[isPrev ? 'prev' : 'next']();
+                self.$calendar.find('.ui-calendar-' + (isPrev ? 'prev' : 'next')).focus();
+            }).on('click.calendar', '.ui-calendar-day:not(.disabled)', function (e) {
+                // 날짜 클릭
+                e.preventDefault();
+                if (self.$el.hasClass('disabled')) {
+                    return;
+                }
+                if (self.options.holidaysAlertMsg !== '' &amp;&amp; ($(this).parent().hasClass('ui-calendar-holiday') || $(this).parent().hasClass('ui-calendar-sunday') || $(this).parent().hasClass('ui-calendar-saturday'))) {
+                    alert(self.options.holidaysAlertMsg);
+                    return;
+                }
+
+                var $this = $(this).closest('td'),
+                    data = $this.data(),
+                    date = new Date(data.year, data.month - 1, data.day),
+                    format = dateUtil.format(date, opts.format || ''),
+                    e,
+                    evtData = {
+                    target: this,
+                    year: $this.data('year'),
+                    month: $this.data('month'),
+                    day: $this.data('day'),
+                    value: format,
+                    date: date,
+                    calendar: self.$calendar[0]
+                };
+
+                e = $.Event('calendarselected');
+                e.target = e.currentTarget = this;
+                self[opts.isBubble ? 'trigger' : 'triggerHandler'](e, evtData);
+                if (e.isDefaultPrevented()) {
+                    return;
+                }
+
+                if (opts.inputTarget) {
+                    self.$input.val(format);
+                    e = $.Event('calendarinsertdate');
+                    e.target = e.currentTarget = this;
+                    self.$input[opts.isBubble ? 'trigger' : 'triggerHandler'](e, evtData);
+
+                    /*if (e.isDefaultPrevented()) {
+                     return;
+                     }*/
+                }
+
+                if (self.isInline &amp;&amp; opts.isClickActive !== false) {
+                    self.$calendar.find('.ui-calendar-active').removeClass('ui-calendar-active');
+                    $this.addClass('ui-calendar-active');
+                    self._readInput();
+                }
+                if (!self.isInline) {
+                    self.close();
+                    self.$input.focus();
+                }
+            }).on('click.calendar', '.ui-calendar-set-today', function (e) {
+                // 오늘 클릭
+                e.preventDefault();
+                self.activeDate = core.clone(self.options.today);
+                self.currDate = core.clone(self.options.today);
+
+                // 달력 그리기
+                self._renderDate();
+            }).on('click.calendar', '.ui-calendar-close', function (e) {
+                // 닫기 클릭
+                e.preventDefault();
+
+                self.close();
+                $(self.opener).focus();
+            }).on('mouseenter.calendar mouseleave.calendar', 'td.ui-calendar-cell:not(.disabled)', function (e) {
+                $(this).toggleClass('active', e.type === 'mouseenter');
+            }).on('mouseenter.calendar mouseleave.calendar', '.ui-calendar-table tbody', function (e) {
+                $(this).toggleClass('ui-calendar-over', e.type === 'mouseenter');
+            });
+
+            self._renderHeader();
+            self._renderDate();
+            self._enforceFocus();
+
+            return self;
+        },
+
+        update: function update() {
+            if (!this.isShown) {
+                return;
+            }
+            this._render();
+            this._reposition();
+        },
+
+        /**
+         * 헤더에 현재 날짜에 대한 정보 표시
+         * @private
+         */
+        _renderHeader: function _renderHeader() {
+            var self = this,
+                opts = self.options;
+
+            if (!opts.header) {
+                return;
+            }
+
+            self.$calendar.find('.ui-calendar-header-first').css('z-index', 1);
+            self.$selectboxYears = self.$calendar.find('.ui-calendar-sel-years');
+
+            self.$selectboxYears.empty();
+            for (var i = self.minDate.getFullYear(); i &lt;= self.maxDate.getFullYear(); i++) {
+                self.$selectboxYears[0].options.add(new Option(i, i));
+            }
+
+            self.$selectboxYears.val(self.currDate.getFullYear()).prop("selected", true); // default selectbox;
+
+            // 일달력(.ui-calendar-header-first)의 년도 선택 버튼에 년도 설정
+            //self.$selectboxYears.vcSelectbox('option', 'preventZindex', true);
+            //self.$selectboxYears.vcSelectbox('value', self.currDate.getFullYear(), false);
+
+
+            // 일달력(.ui-calendar-header-second)의 월선택 버튼에 월 설정
+            var currDate = new Date(self.currDate.getTime()),
+                html,
+                $second = self.$calendar.find('.ui-calendar-header-second'),
+                isFirst = currDate.getFullYear() === self.minDate.getFullYear() &amp;&amp; currDate.getMonth() === self.minDate.getMonth(),
+                isLast = currDate.getFullYear() === self.maxDate.getFullYear() &amp;&amp; currDate.getMonth() === self.maxDate.getMonth();
+
+            currDate = core.date.calcDate(currDate, '-1M');
+            $second.children().each(function (val, name) {
+                html = '&lt;span class="hide">' + currDate.getFullYear() + '년&lt;/span>';
+                html += core.number.zeroPad(currDate.getMonth() + 1, 2);
+                if (val === 1) {
+                    html += '&lt;span class="hide">월이 선택됨&lt;/span>';
+                } else {
+                    html += '&lt;span class="hide">월로 이동&lt;/span>';
+                }
+                $(this).html(html);
+                currDate = core.date.calcDate(currDate, '1M');
+            });
+
+            $second.find('.ui-calendar-prev').css({ outline: 'none' }).toggleClass('disabled', isFirst).attr('tabindex', isFirst ? '-1' : '0');
+            $second.find('.ui-calendar-next').css({ outline: 'none' }).toggleClass('disabled', isLast).attr('tabindex', isLast ? '-1' : '0');
+        },
+
+        /**
+         * 해제 메소드
+         */
+        release: function release() {
+            var self = this;
+
+            self.$input &amp;&amp; self.$input.removeData('calendar');
+            self._remove();
+            self.close();
+            self.supr();
+        },
+
+        /**
+         * 주어진 월이 유효한 범위에 있는가 체크
+         * @param date
+         * @returns {*}
+         * @private
+         */
+        _compareMonth: function _compareMonth(date) {
+            var self = this;
+            date = core.clone(date);
+            date.setDate(self.minDate.getDate());
+            date.setHours(0, 0, 0, 0);
+
+            if (date.getTime() &lt; self.minDate.getTime()) {
+                return -1;
+            }
+            date.setDate(self.maxDate.getDate());
+            if (date.getTime() > self.maxDate.getTime()) {
+                return 1;
+            }
+            return 0;
+        },
+
+        /**
+         * 주어진 날짜가 유효한 범위에 있는가 체크
+         * @param date
+         * @returns {*}
+         * @private
+         */
+        _compareDate: function _compareDate(date) {
+            var self = this;
+            if (!(date instanceof Date)) {
+                date = dateUtil.parse(date);
+            }
+            if (!date || isNaN(date)) {
+                return null;
+            }
+            date.setHours(0, 0, 0, 0);
+
+            if (date.getTime() &lt; self.minDate.getTime()) {
+                return -1;
+            }
+            if (date.getTime() > self.maxDate.getTime()) {
+                return 1;
+            }
+            return 0;
+        },
+
+        /**
+         * 표시할 날짜 설정
+         * @param date
+         */
+        setCurrentDate: function setCurrentDate(date) {
+            if (!(date instanceof Date)) {
+                date = dateUtil.parse(date);
+            }
+            if (!date || isNaN(date)) {
+                return;
+            }
+            var self = this,
+                result = self._compareMonth(date);
+            if (result &lt; 0) {
+                date.setYear(self.minDate.getFullYear());
+                date.setMonth(self.minDate.getMonth());
+            } else if (result > 0) {
+                date.setYear(self.maxDate.getFullYear());
+                date.setMonth(self.maxDate.getMonth());
+            }
+            self.currDate = date;
+            //self.$selectboxYears.val(date.getFullYear());
+            if (self.isShown) {
+                self._renderDate();
+            }
+        },
+
+        /**
+         * 달력 그리기
+         * @returns {Calendar}
+         * @private
+         */
+        _renderDate: function _renderDate() {
+            var self = this,
+                opts = self.options,
+                beforeRenderDay = opts.beforeRenderDay,
+                date = self._getDateList(self.currDate),
+                html = '',
+                tmpl = core.template(opts.template[opts.type] || opts.template.button),
+                isHoliday = false,
+                isDisabledDay = false,
+                isToday = false,
+                isSelectDay = false,
+                isOtherMonth = false,
+                isDisabled = false,
+                i,
+                j,
+                y,
+                m,
+                d,
+                week,
+                len,
+                cell,
+                nowd;
+
+            html += '&lt;table class="ui-calendar-table" border="0">&lt;caption>' + opts.caption + '&lt;/caption>';
+            html += '&lt;colgroup>';
+            for (i = 0; i &lt; 7; i++) {
+                html += '&lt;col width="' + opts.colWidth + '" />';
+            }
+            html += '&lt;/colgroup>&lt;thead>';
+            for (i = 0; i &lt; 7; i++) {
+                html += '&lt;th class="ui-calendar-dayname ' + (i === 0 ? ' ui-calendar-sunday' : i === 6 ? ' ui-calendar-saturday' : '') + '" scope="col">';
+                html += opts.weekNames[i];
+                html += '&lt;/th>';
+            }
+            html += '&lt;/thead>&lt;tbody>';
+
+            for (i = 0, len = date.length; i &lt; len; i++) {
+                week = date[i];
+
+                html += '&lt;tr>';
+                for (j = 0; j &lt; 7; j++) {
+                    y = week[j].year, m = week[j].month, d = week[j].day;
+                    nowd = new Date(y, m - 1, d);
+
+                    if (self.activeDate) {
+                        isSelectDay = self.activeDate.getFullYear() === y &amp;&amp; self.activeDate.getMonth() + 1 === m &amp;&amp; self.activeDate.getDate() === d;
+                    }
+                    isToday = opts.today.getFullYear() === y &amp;&amp; opts.today.getMonth() + 1 === m &amp;&amp; opts.today.getDate() === d;
+                    isOtherMonth = self.currDate.getMonth() + 1 != m;
+                    isDisabled = self._compareDate(nowd) !== 0 || opts.weekendDisabled &amp;&amp; (j === 0 || j === 6) || self._isDisabledDay(y, m, d);
+                    isHoliday = self._isHoliday(y, m, d);
+
+                    if (beforeRenderDay) {
+                        cell = beforeRenderDay.call(me, y, m, d, {
+                            isSaturday: j === 6,
+                            isSunday: j === 0,
+                            isHoliday: isHoliday,
+                            isToday: isToday,
+                            isOtherMonth: isOtherMonth }) || { cls: '', html: '', disabled: '' };
+                    } else {
+                        cell = { cls: '', html: '', disabled: '' };
+                    }
+                    cell.cls = '';
+
+                    html += '&lt;td class="ui-calendar-' + dateUtil.format(nowd, 'yyyyMMdd') + ' ui-calendar-cell' + (isDisabled ? " disabled" : "");
+                    if (opts.showOtherMonths &amp;&amp; isOtherMonth || !isOtherMonth) {
+                        html += (isHoliday ? ' ui-calendar-holiday' : '') + (j === 0 ? ' ui-calendar-sunday' : j === 6 ? ' ui-calendar-saturday' : '') + (isToday ? ' ui-calendar-today' : '') + (!isDisabled &amp;&amp; isSelectDay ? ' ui-calendar-active' : '');
+                    }
+                    html += (isOtherMonth ? ' ui-calendar-other' : '') + cell.cls + '" data-year="' + y + '" data-month="' + m + '" data-day="' + d + '">';
+
+                    if (!isOtherMonth || opts.showOtherMonths) {
+                        if (cell.html) {
+                            html += cell.html;
+                        } else {
+                            html += tmpl({
+                                title: dateUtil.format(nowd, opts.titleFormat) + (isToday ? ' 오늘' : '') + (isDisabled ? " 선택할 수 없음" : isSelectDay ? ' 선택일' : ''),
+                                isHoliday: isHoliday,
+                                isToday: isToday,
+                                isOtherMonth: isOtherMonth,
+                                isSunday: j === 0,
+                                isSaturday: j === 6,
+                                day: d,
+                                date: nowd,
+                                disabled: isDisabled
+                            });
+                        }
+                    } else {
+                        html += '&amp;nbsp;';
+                    }
+                    html += '&lt;/td>';
+                } // for
+                html += '&lt;/tr>';
+            } // for
+            html += '&lt;/tbody>&lt;/table>';
+
+            self.$calendar.find('.ui-calendar-date').html(html);
+            self.$calendar.find('.ui-calendar-text').text(dateUtil.format(self.currDate, 'yyyy-MM'));
+
+            if (opts.header) {
+                self._renderHeader();
+            }
+
+            return self;
+        },
+
+        /**
+         * 화면 갱신
+         */
+        refresh: function refresh() {
+            this._renderDate();
+        },
+
+        /**
+         * 주어진 날짜에 해당하는 dom요소를 반환
+         * @param day
+         * @returns {*}
+         */
+        findDateCell: function findDateCell(day) {
+            return this.$calendar.find('.data-' + day.getFullYear() + '' + (day.getMonth() + 1) + '' + day.getDate());
+        },
+
+        /**
+         * 입력요소를 활성화
+         */
+        enable: function enable() {
+            var self = this;
+            if (!self.options.isInline) {
+                self.$input.disabled(false);
+            }
+            self.$el.disabled(false);
+        },
+
+        /**
+         * 입력요소를 비활성화
+         */
+        disable: function disable() {
+            var self = this;
+
+            self.close();
+            if (self.options.inputTarget) {
+                self.$input.disabled(true);
+            }
+            self.$el.disabled(true);
+        },
+
+        /**
+         * 날짜 변경
+         * @param date
+         */
+        setDate: function setDate(date, options) {
+            if (!date) {
+                return;
+            }
+            var self = this;
+
+            if (options) {
+                self.options = $.extend(true, self.options, self.$el.data(), options);
+                self._normalizeOptions();
+            }
+
+            try {
+                if (dateUtil.isValid(date)) {
+                    self.activeDate = dateUtil.parse(date);
+                } else {
+                    return;
+                    //self.activeDate = new Date();
+                }
+                self.currDate = core.clone(self.activeDate);
+                if (self.isShown) {
+                    self.setCurrentDate(core.clone(self.currDate));
+                }
+            } catch (e) {
+                throw new Error('Calendar#setDate(): 날짜 형식이 잘못 되었습니다.');
+            }
+            return this;
+        },
+
+        /**
+         * 오늘날짜 변경
+         * @param today
+         */
+        setToday: function setToday(today) {
+            var self = this;
+
+            if (!core.is(today, 'date')) {
+                try {
+                    self.options.today = core.date.parse(today);
+                } catch (e) {
+                    throw new Error('calendar#setToday: 날짜 형식이 잘못 되었습니다.');
+                }
+            }
+            self._renderDate();
+        },
+
+        /**
+         * 오늘날짜 반환
+         * @returns {Date} 오늘날짜
+         */
+        getToday: function getToday() {
+            return this.options.today;
+        },
+
+        /**
+         * 현재 날짜를 반환
+         * @returns {*}
+         */
+        getCurrentDate: function getCurrentDate() {
+            return this.currDate;
+        },
+
+        /**
+         * 이전달
+         * @returns {Calendar}
+         */
+        prev: function prev() {
+            var self = this,
+                currDate = core.date.add(self.currDate, 'M', -1);
+            if (self.options.header &amp;&amp; self._compareMonth(currDate) !== 0) {
+                return this;
+            }
+            self.currDate = currDate;
+            self._renderDate();
+
+            return this;
+        },
+
+        /**
+         * 다음달
+         * @returns {Calendar}
+         */
+        next: function next() {
+            var self = this,
+                currDate = core.date.add(self.currDate, 'M', 1);
+            if (self.options.header &amp;&amp; self._compareMonth(currDate) !== 0) {
+                return this;
+            }
+            self.currDate = currDate;
+            self._renderDate();
+
+            return this;
+        },
+
+        /**
+         * 날짜 데이타 계산
+         * @param {Date} date 렌더링할 날짜 데이타 생성
+         * @return {Array}
+         */
+        _getDateList: function _getDateList(date) {
+            date.setDate(1);
+
+            var self = this,
+                month = date.getMonth() + 1,
+                year = date.getFullYear(),
+                startOnWeek = date.getDay() + 1,
+                last = daysInMonth[date.getMonth()],
+                // 마지막날
+            prevLast = daysInMonth[date.getMonth() === 0 ? 11 : date.getMonth() - 1],
+                // 이전달의 마지막날
+            startPrevMonth = prevLast - startOnWeek,
+                // 이전달의 시작일
+            y = year,
+                m = month;
+
+            if (month > 12) {
+                month -= 12, year += 1;
+            } else {
+                if (month == 2 &amp;&amp; self._isLeapYear(year)) {
+                    last = 29;
+                }
+            }
+
+            var data = [],
+                week = [];
+
+            if (startOnWeek > 0) {
+                if (month == 3 &amp;&amp; self._isLeapYear(year)) {
+                    startPrevMonth += 1;
+                }
+                if ((m = month - 1) &lt; 1) {
+                    m = 12, y = year - 1;
+                }
+                for (var i = 1; i &lt; startOnWeek; i++) {
+                    week.push({ year: y, month: m, day: startPrevMonth + i + 1 }); // ***** +1
+                }
+                if (week.length > 6) {
+                    data.push(week), week = [];
+                }
+            }
+
+            for (var i = 1; i &lt;= last; i++) {
+                week.push({ year: year, month: month, day: i });
+                if (week.length > 6) {
+                    data.push(week), week = [];
+                }
+            }
+
+            if (week.length > 0 &amp;&amp; week.length &lt; 7) {
+                if ((m = month + 1) > 12) {
+                    m -= 12, y = year + 1;
+                }
+                for (var i = week.length, d = 1; i &lt; 7; i++, d++) {
+                    week.push({ year: y, month: m, day: d });
+                }
+            }
+            week.length &amp;&amp; data.push(week);
+            return data;
+        },
+
+        /**
+         * 다음달
+         * @returns {Calendar}
+         */
+        _enforceFocus: function _enforceFocus() {
+            var self = this,
+                isKeyDown = false;
+
+            $doc.off('keydown.calendar keyup.calendar').on('keydown.calendar keyup.calendar', function (e) {
+                isKeyDown = e.type === 'keydown';
+            }).off('focusin.calendar').on('focusin.calendar', self.proxy(function (e) {
+                if (!isKeyDown) {
+                    return;
+                }
+                if (self.$calendar[0] !== e.target &amp;&amp; !$.contains(self.$calendar[0], e.target)) {
+                    self.$calendar.find('div:visible').find(':focusable').first().focus();
+                    e.stopPropagation();
+                }
+            }));
+        },
+
+        /**
+         * 윤년 여부
+         * @param {Date} date 렌더링할 날짜 데이타 생성
+         * @return {boolean} 윤년 여부
+         */
+        _isLeapYear: function _isLeapYear(year) {
+            return year % 4 === 0 &amp;&amp; year % 100 !== 0 || year % 400 === 0;
+        }
+    });
+
+    if (typeof define === "function" &amp;&amp; define.amd) {
+        define([], function () {
+            return Calendar;
+        });
+    }
+})(jQuery, window[LIB_NAME]);</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Thu Sep 14 2017 13:50:48 GMT+0900 (KST)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/jaguar.js"></script>
+</body>
+</html>
