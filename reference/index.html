@@ -1478,11 +1478,11 @@
     <li>ui modules by framework: <a href="https://github.com/ssoju/javascript/tree/master/src/ui">https://github.com/ssoju/javascript/tree/master/src/ui</a></li>
     </ul>
 <br><br>
-    <p><em>axljs framework 사용법</em></p>
+    <p><em>VCUI Framework 사용법</em></p>
     <div class="highlight highlight-source-js"><pre> &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 클래스를 만드는 방식은 두가지가 있다.</span>
         
     &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 1. 부모클래스</span>
-        <span class="pl-k">var</span> ParentClass <span class="pl-k">=</span> <span class="pl-smi">axl</span>.<span class="pl-smi">BaseClass</span>.<span class="pl-en">extend</span>({
+        <span class="pl-k">var</span> ParentClass <span class="pl-k">=</span> <span class="pl-smi">vcui</span>.<span class="pl-smi">BaseClass</span>.<span class="pl-en">extend</span>({
     &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 생성자</span>
     &nbsp; &nbsp; &nbsp;<span class="pl-en">initialize</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
         
@@ -1495,7 +1495,7 @@
         });
         
         <span class="pl-c"><span class="pl-c">//</span> or</span>
-        <span class="pl-k">var</span> ParentClass <span class="pl-k">=</span> <span class="pl-smi">axl</span>.<span class="pl-en">Class</span>({
+        <span class="pl-k">var</span> ParentClass <span class="pl-k">=</span> <span class="pl-smi">vcui</span>.<span class="pl-en">Class</span>({
             <span class="pl-k">...</span>
         });
 
@@ -1509,7 +1509,7 @@
         });
         
         <span class="pl-c"><span class="pl-c">//</span> or</span>
-        <span class="pl-k">var</span> ChildClass <span class="pl-k">=</span> <span class="pl-smi">axl</span>.<span class="pl-en">Class</span>({
+        <span class="pl-k">var</span> ChildClass <span class="pl-k">=</span> <span class="pl-smi">vcui</span>.<span class="pl-en">Class</span>({
     &nbsp; &nbsp; &nbsp; &nbsp;$extend<span class="pl-k">:</span> ParentClass, <span class="pl-c"><span class="pl-c">//</span> 부모클래스 지정</span>
     &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-k">...</span>,
             <span class="pl-en">open</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">flag</span>){
@@ -1552,7 +1552,7 @@
                 <span class="pl-c"><span class="pl-c">//</span> 싱글톤 클래스 여부</span>
                 $singleton<span class="pl-k">:</span> <span class="pl-c1">true</span>,
 
-                <span class="pl-c"><span class="pl-c">//</span> 해당 모듈을 jQuery 플러그인방식으로 사용할 수 있도록 설정하는 옵션이다. 예) $('#d-tab').axlTab({옵션들});</span>
+                <span class="pl-c"><span class="pl-c">//</span> 해당 모듈을 jQuery 플러그인방식으로 사용할 수 있도록 설정하는 옵션이다. 예) $('#d-tab').vcuiTab({옵션들});</span>
                 bindjQuery<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>tab<span class="pl-pds">'</span></span>,
 
                 <span class="pl-c"><span class="pl-c">//</span> =========================================================================================</span>
@@ -1579,7 +1579,7 @@
                     <span class="pl-c"><span class="pl-c">//</span> 단, context는 해당 노드가 아닌 클래스 인스턴스가 된다.</span>
                 },
 
-                <span class="pl-c"><span class="pl-c">//</span> $('#tab').axlTab({selectedIndex:1});처럼 jQuery 플러그인방식으로 호출하였을 때, el에는 #tab이 options에는 {sel...}가 넘어온다.</span>
+                <span class="pl-c"><span class="pl-c">//</span> $('#tab').vcuiTab({selectedIndex:1});처럼 jQuery 플러그인방식으로 호출하였을 때, el에는 #tab이 options에는 {sel...}가 넘어온다.</span>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> or new vcui.ui.Tab('#tab', {selectedIndex:1}); 처럼 캑체를 직접 생성해도 됨.</span>
                 <span class="pl-en">initialize</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">el</span>, <span class="pl-smi">options</span>) {
                     <span class="pl-k">var</span> me <span class="pl-k">=</span> <span class="pl-c1">this</span>;
@@ -1631,14 +1631,14 @@
         })(jQuery, <span class="pl-c1">window</span>[<span class="pl-c1">LIB_NAME</span>]);
         
     &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 적용 #1</span>
-    &nbsp; &nbsp;<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#tab<span class="pl-pds">'</span></span>).<span class="pl-en">axlTab</span>({
+    &nbsp; &nbsp;<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#tab<span class="pl-pds">'</span></span>).<span class="pl-en">vcuiTab</span>({
             selectedIndex<span class="pl-k">:</span> <span class="pl-c1">1</span> <span class="pl-c"><span class="pl-c">//</span> or &lt;div id="tab" data-selected-index="1"&gt;...&lt;/a&gt;</span>
         }).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>tab:change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
     &nbsp; &nbsp; &nbsp; &nbsp;<span class="pl-en">alert</span>(<span class="pl-smi">data</span>.<span class="pl-c1">selectedIndex</span><span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>가 선택됨<span class="pl-pds">'</span></span>);
     &nbsp; &nbsp;});
         
     &nbsp; &nbsp;<span class="pl-c"><span class="pl-c">//</span> 적용 #2</span>
-    &nbsp; &nbsp;<span class="pl-k">var</span> tab <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">axl.ui.Tab</span>(<span class="pl-s"><span class="pl-pds">'</span>#tab<span class="pl-pds">'</span></span>, {
+    &nbsp; &nbsp;<span class="pl-k">var</span> tab <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">vcui.ui.Tab</span>(<span class="pl-s"><span class="pl-pds">'</span>#tab<span class="pl-pds">'</span></span>, {
             selectedIndex<span class="pl-k">:</span> <span class="pl-c1">1</span>,
             on<span class="pl-k">:</span> {
                 <span class="pl-s"><span class="pl-pds">'</span>tab:change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
